@@ -1,0 +1,52 @@
+@import url("chrome://global/skin/");
+
+/* native "reload/show" gContextMenu */
+#context-reloadimage,
+#context-showimage {
+  display: none;
+}
+
+.iloButton {
+  list-style-image: url("img/ilo24.png") !important;
+  -moz-image-region: rect(0px 24px 24px 0px) !important;
+}
+
+
+/* *****************************************************************
+ * Toolbar Button
+ */
+
+toolbar[mode="full"] .iloButton,
+toolbar[mode="text"] .iloButton {
+  width:7.5em !important;
+}
+
+toolbar .iloButton {
+  padding-right: 2px;
+}
+
+/* iconsize="big" */
+toolbar .iloButton[value="policy2"] {
+  -moz-image-region: rect(24px 24px 48px 0px) !important;
+}
+toolbar .iloButton[value="policy3"] {
+  -moz-image-region: rect(48px 24px 72px 0px) !important;
+}
+toolbar .iloButton[value="policy4"] {
+  -moz-image-region: rect(72px 24px 96px 0px) !important;
+}
+
+/* iconsize="small" */
+toolbar[iconsize="small"] .iloButton {
+  list-style-image: url("img/ilo16.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+toolbar[iconsize="small"] .iloButton[value="policy2"] {
+  -moz-image-region: rect(16px 16px 32px 0px) !important;
+}
+toolbar[iconsize="small"] .iloButton[value="policy3"] {
+  -moz-image-region: rect(32px 16px 48px 0px) !important;
+}
+toolbar[iconsize="small"] .iloButton[value="policy4"] {
+  -moz-image-region: rect(48px 16px 64px 0px) !important;
+}

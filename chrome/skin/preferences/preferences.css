@@ -1,0 +1,64 @@
+@import url("chrome://global/skin/");
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url(http://www.w3.org/1999/xhtml);
+
+groupbox > hbox,
+row > hbox {
+  -moz-box-align: center;
+  -moz-box-flex: 1;
+}
+
+html|object {
+  border: 3px double #999;
+  -moz-box-flex: 1;
+  min-height: 30em;
+}
+
+/* TODO: Icons */
+radio[pane] {
+  min-width: 64px;
+}
+
+radio[pane="prefpane-main"] {
+  list-style-image: url("main.png");
+}
+
+radio[pane="prefpane-filters"] {
+  list-style-image: url("filters.png");
+}
+
+radio[pane="prefpane-experimental"] {
+  list-style-image: url("experimental.png");
+}
+
+radio[pane="prefpane-help"] {
+  list-style-image: url("help.png");
+}
+
+radio[pane] image {
+  opacity: .8;
+}
+
+radio[pane]:hover image,
+radio[pane][selected="true"] image {
+  opacity: 1;
+}
+
+/* Policy switch modes */
+checkbox[id|="policy-switch-modes-chk"] > * image {
+  list-style-image: url("../img/ilo16.png");
+  margin: 0 1.5em 0 0.5em;
+}
+
+#policy-switch-modes-chk-1 {
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+#policy-switch-modes-chk-2 {
+  -moz-image-region: rect(16px 16px 32px 0px);
+}
+#policy-switch-modes-chk-3 {
+  -moz-image-region: rect(32px 16px 48px 0px);
+}
+#policy-switch-modes-chk-4 {
+  -moz-image-region: rect(48px 16px 64px 0px);
+}

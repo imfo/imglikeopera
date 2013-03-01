@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://imglikeopera/skin/help.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<head>
+<title>ImgLikeOpera: Ayuda</title>
+</head>
+<body>
+    
+    <p>En esta sección de ayuda se dan una serie de informaciones generales sobre la extensión con indicaciones específicas que permiten optimizar su uso.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>¿Para qué sirve ILO?</h3>
+    
+    <p>ImgLikeOpera (ILO) resulta muy útil cuando se visitan páginas web con muchos gráficos y se tiene un conexión telefónica con módem, o banda ancha muy cara.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Requisitos del navegador</h3>
+    
+    <p>Firefox 4.0+</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Prestaciones</h3>
+    
+    <ul>
+        <li>contenedores (placeholders) para imágenes bloquedas (gracias a LJ);</li>
+        <li>(re)cargar imagen mediante el menú contextual o Ctrl+clic derecho ratón;</li>
+        <li>tiempo de expiración obligatoria (desde 5 minutos hasta 3 meses);</li>
+        <li>cuatro posibles reglas para cada pestaña;</li>
+        <li>filtros.</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Reglas</h3>
+    
+    <p>Puede escojer una de estas cuatro reglas de actuación para cada pestaña:</p>
+    
+    <ul>
+        <li>no cargar imágenes;</li>
+        <li>sólo cargar imágenes de caché;</li>
+        <li>sólo cargar imágenes del sitio web original;</li>
+        <li>cargar todas las imágenes.</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Tiempo de expiración obligatoria</h3>
+    
+    <p>Firefox hace un uso bastante optimizado de la caché, pero eso a veces provoca un problema a la hora de utilizarlo. El navegador tiene que comprobar la fecha/hora de última modificación para el tiempo de expiración obligatoria, y a veces recarga objetos que en realidad no han cambiado. No todos los webmasters comprenden correctamente el mecanismo de funcionamiento de la caché.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Filtros</h3>
+    
+    <p>ImgLikeOpera soporta dos tipos de filtro: simple y de expresiones regulares (gracias a <a href="http://adblockplus.org/" target="_blank">AdBlock</a>). Si a los dos lados del filtro no está el símbolo &#34;/&#34;, se trata de un filtro simple.</p>
+    
+    <p>Ejemplo de filtro simple:</p>
+    
+    <ul>
+        <li>en el campo &#8220;Filtro&#8221; escriba http://www.example.com</li>
+        <li>en el campo &#8220;Reglas de filtros&#8221; escoja la opción&#8220;Cargar todas las imágenes&#8221;</li>
+        <li>pulse el botón &#8220;Añadir&#8221;</li>
+        <li>guarde la lista de filtros (pulse el botón &#8220;Aplicar&#8221;)</li>
+    </ul>
+    
+    <p>Tras esto, ILO cargará todos los elementos gráficos cuya URL contenga &#8220;http://www.example.com&#8221; o pertenezcan a un sitio web con &#8220;http://www.example.com&#8221; en su dirección, con independencia de las reglas establecidas para la pestaña actual.</p>
+    
+    <p>Puede exportar la lista de filtros a un disco o importar una lista existente como fichero de texto.</p>
+    
+    <p>Otros ejemplos de filtros simples:</p>
+    
+    <ul>
+        <li>.gif</li>
+        <li>example.com/*.bmp</li>
+        <li>/banner</li>
+        <li>*/banner/*</li>
+    </ul>
+    
+    <p>Atención: las reglas de los filtros funcionan tanto con URLs de imágenes como con la dirección del sitio web. A veces la URL de una imagen contiene una dirección de sitio web, pero otras veces no ocurre así.</p>
+    
+    <p>Para los que conozcan las RegExp (expresiones regulares):</p>
+    
+    <ul>
+        <li>/banner|annonce/</li>
+        <li>/example\.com|imfo\.ru|mozdev\.org|mozilla\.com/</li>
+        <li>/example\.com\/(ads|banner)/i</li>
+        <li>/[a-z0-9\-\.]*(some\-url\.net|imfo\.ru|mozilla\.ru)/i</li>
+    </ul>
+    
+    <p>Dos advertencias:</p>
+    
+    <ul>
+        <li>puede escribir &#34;/&#34; sin &#34;\&#34;, por ejemplo &#34;/test/banner/&#34; y &#34;/test\/banner/&#34; serían equivalentes;</li>
+        <li>utilice el flag &#34;i&#34; para que las RegExp no distingan entre mayúsculas y minúsculas.</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Control, teclas de acceso rápido, posición (barra estado/barra herramientas)</h3>
+    
+    <p>Tras la instalación podrá ver el botón de ImgLikeOpera en la barra de estado del navegador. Si hace clic con el botón izquierdo del ratón (o Alt+M en el teclado) o con el botón derecho (o Alt+N) se conmutarán las reglas aplicables a la pestaña; un clic con botón central proporciona acceso inmediato a la ventana de predisposiciones de la extensión.</p>
+    
+    <p>Un clic con botón izquierdo en la zona derecha del icono abrirá el menú de selección de reglas y acceso a las predisposiciones de la extensión.</p>
+    
+    <p>Existen dos formas de (re)cargar imágenes de la página: situar el puntero del ratón sobre la imagen y presionar Ctrl + botón derecho del ratón; o seleccionar la opción &#8220;Cargar imagen&#8221; en el menú contextual.</p>
+    
+    <p>Si desea tener disponible el botón de ImgLikeOpera en la barra de herramientas, haga clic derecho en cualquier parte de la barra y seleccione &#8220;Personalizar...&#8221; Después arrastre el icono de ImgLikeOpera dsde la ventana que se abrirá a continuación hasta la barra.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>FAQ</h3>
+    
+    <ul id="faq">
+        <li>ILO no funciona.</li>
+        <li class="a">A mí si me funciona.</li>
+        
+        <li>Pero... ¡a mí no me funcionó ILO!</li>
+        <li class="a">Consulta el apartado &#8220;Bugs (fallos), realimentación de información&#8221;.</li>
+        
+        <li>Las imágenes todavía se siguen cargando, como si no estuvieran en la caché. Mis predisposiciones de la caché (tamaño y tiempo de expiración obligatorio) son bastante grandes.</li>
+        <li class="a">Existe una inestabilidad en la caché de Firefox. Algunas veces falla. No es culpa mía. Consultar el bug <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=105843">105843</a> &#8220;Se pierde la caché si Mozilla se cae&#8221;. Puede utilizar <a href="http://imglikeopera.mozdev.org/cache_fixer.html">Cache Fixer</a>, pero bajo su reponsabilidad.</li>
+        
+        <li>¿Qué pasa con las imágenes Flash?</li>
+        <li class="a"><a href="http://flashblock.mozdev.org/" target="_blank">Flashblock</a>.</li>
+        
+        <li>No me gustan las teclas de acceso rápido predefinidas. ¿Cómo puedo cambiarlas?</li>
+        <li class="a"><a href="http://mozilla.dorando.at/readme.html" target="_blank">keyconfig</a>.</li>
+        
+        <li>No me gustan estos iconos.</li>
+        <li class="a">Dibuje el suyo propio. En versiones posteriores de ILO podrá incluso escogerlos.</li>
+        
+        <li>¿Habrá una versión de esta extensión para la Suite Mozilla?</li>
+        <li class="a">No lo sé. ¿Realmente la necesita en vista de la &#8220;<a href="http://www.mozillazine.org/talkback.html?article=6206" target="_blank">discontinuación del soporte oficial a Mozilla 1.8</a>&#8221;?</li>
+        
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Bugs (fallos), realimentación de información</h3>
+    
+    <p>Bugs conocidos:</p>
+    <ul>
+        <li>ILO carga imágenes bloqueadas si se guarda la página en el disco.</li>
+    </ul>
+    
+    <p>No tengo ninguna noticia de que existan conflictos con otras extensiones.</p>
+    
+    <p>Si encuentra cualquier otro bug, por favor mande un correo electrónico en inglés o ruso a <a href="mailto:mash-funky@mail.ru">mash-funky@mail.ru</a></p>
+    
+    <p><strong>Nota importante.</strong>: Yo...</p>
+    <ul>
+        <li>... no voy a leer mensajes que contengan exclamaciones como &#8220;nt WoRked! Not worKED!&#8221;;</li>
+        <li>... solamente consideraré la posibilidad de hacer algo si el mensaje contiene:
+            <ul>
+                <li>versión del navegador (cadena del UA);</li>
+                <li>lista de extensiones utilizadas;</li>
+                <li>pasos a realizar para reproducir el problema;</li>
+                <li>y su opinión sobre la posible causa inmediata (opcional).</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Agradecimientos</h3>
+    
+    <p>Siempre es posible que olvide a alguien (si es así, espero que no sea muy sensible al respecto), así que gracias a todos los que me han ayudado con ILO.</p>
+
+</body>
+</html>

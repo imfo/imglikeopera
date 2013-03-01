@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="../../skin/preferences/preferences.css"?>
+
+<!DOCTYPE overlay [
+  <!ENTITY prefBranch "extensions.imglikeopera@imfo.ru.">
+  <!ENTITY % imglikeoperaDTD SYSTEM "../../locale/imglikeopera.dtd">
+  %imglikeoperaDTD;
+]>
+
+<overlay id="prefpane-help-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         xmlns:html="http://www.w3.org/1999/xhtml">
+  
+  <prefpane id="prefpane-help" flex="1">
+    <vbox flex="1">
+      <html:object id="help-frame" data="chrome://imglikeopera/locale/help.xhtml" flex="1"></html:object>
+    </vbox>
+  </prefpane>
+</overlay>

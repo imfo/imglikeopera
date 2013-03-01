@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="../../skin/preferences/preferences.css"?>
+
+<!DOCTYPE overlay [
+  <!ENTITY prefBranch "extensions.imglikeopera@imfo.ru.">
+  <!ENTITY % imglikeoperaDTD SYSTEM "../../locale/imglikeopera.dtd">
+  %imglikeoperaDTD;
+]>
+
+<overlay id="prefpane-filters-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+  <prefpane id="prefpane-filters" flex="1">
+    <popupset>
+      <menupopup id="iloFiltersPopup">
+        <menuitem label="&ilo-filters-copy.label;"
+                  oncommand="Filters.checkEvent('copy');"
+                  key="ilokey-filter-copy"
+                  />
+        <menuitem label="&ilo-filters-modify.label;"
+                  oncommand="Filters.checkEvent('modify');"
+                  key="ilokey-filter-modify"
+                  />
+        <menuseparator/>
+        <menuitem label="&ilo-filters-move-top.label;"
+                  oncommand="Filters.checkEvent('top');"
+                  key="ilokey-filter-set-priority-top"
+                  />
+        <menuitem label="&ilo-filters-move-up.label;"
+                  oncommand="Filters.checkEvent('up');"
+                  key="ilokey-filter-set-priority-up"
+                  />
+        <menuitem label="&ilo-filters-move-down.label;"
+                  oncommand="Filters.checkEvent('down');"
+                  key="ilokey-filter-set-priority-down"
+                  />
+        <menuitem label="&ilo-filters-move-bottom.label;"
+                  oncommand="Filters.checkEvent('bottom');"
+                  key="ilokey-filter-set-priority-bottom"
+                  />
+
+        <menuseparator/>
+
+        <menuitem label="&ilo-settings-perm-removefilter.label;"
+                  oncommand="Filters.checkEvent('removeFilters');"
+                  key="ilokey-filter-delete"
+                  />
+        <menuitem label="&ilo-settings-perm-removeallfilters.label;"
+                  oncommand="Filters.checkEvent('removeAllFilters');"
+                  key="ilokey-filter-deleteAll"
+                  />
+      </menupopup>
+    </popupset>
+    
+    <keyset id="ksGlobalKeyset">
+      <key id="ilokey-filter-copy" modifiers="accel" key="C" oncommand="Filters.checkEvent('copy');"/>
+      <key id="ilokey-filter-modify" modifiers="accel" key="M" oncommand="Filters.checkEvent('modify');"/>
+      <key id="ilokey-filter-selectAll" modifiers="accel" key="A" oncommand="Filters.checkEvent('selectAll');"/>
+      <key id="ilokey-filter-delete" keycode="vk_delete" oncommand="Filters.checkEvent('removeFilters');"/>
+      <key id="ilokey-filter-deleteAll"
+           modifiers="shift,accel" keycode="vk_delete" oncommand="Filters.checkEvent('removeAllFilters');"/>
+      <key id="ilokey-filter-set-priority-top"
+           modifiers="shift,accel" keycode="vk_left" oncommand="Filters.checkEvent('top');"/>
+      <key id="ilokey-filter-set-priority-up"
+           modifiers="shift,accel" keycode="vk_up" oncommand="Filters.checkEvent('up');"/>
+      <key id="ilokey-filter-set-priority-down"
+           modifiers="shift,accel" keycode="vk_down" oncommand="Filters.checkEvent('down');"/>
+      <key id="ilokey-filter-set-priority-bottom"
+           modifiers="shift,accel" keycode="vk_right" oncommand="Filters.checkEvent('bottom');"/>
+    </keyset>
+    
+    <hbox align="right" style="padding:0; margin-bottom:-2.2ex;">
+      <button id="iloExportFilters"
+              label="&ilo-filters-export.label;"
+              onclick="Filters.filtersExportList();"/>
+      <button id="iloImportFilters"
+              label="&ilo-filters-import.label;"
+              onclick="Filters.filtersImportList();"/>
+    </hbox>
+    
+    <label value="&ilo-settings-perm-filter.label;:" control="iloAddFilter"/>
+    <textbox id="iloAddFilter" onkeypress="if(event.keyCode == 13) Filters.addFilter();"/>
+    <label value="&ilo-settings-perm-policy1.label;:" control="iloAddPolicy"/>
+    
+    <hbox>
+      <menulist id="iloAddPolicy" flex="1">
+        <menupopup>
+          <menuitem label="[4] &ilo-policy-load-dont.label;"/>
+          <menuitem label="[3] &ilo-policy-load-cached.label;"/>
+          <menuitem label="[2] &ilo-policy-load-origsite.label;"/>
+          <menuitem label="[1] &ilo-policy-load-all.label;"/>
+        </menupopup>
+      </menulist>
+      <button id="iloAddFilterButton"
+              label="&ilo-settings-button-add.label;"
+              onclick="Filters.addFilter();"/>
+    </hbox>
+    
+    <separator class="thin"/>
+    
+    <tree id="iloPermissionsTree" flex="1" style="height: 16em;"
+          hidecolumnpicker="true"
+          onselect="Filters.permissionSelected();">
+      <treecols>
+        <treecol id="iloRegExpCol" label="R"/>
+        <splitter class="tree-splitter"/>
+        <treecol id="iloFilterCol" label="&ilo-settings-perm-filter.label;" flex="5"/>
+        <splitter class="tree-splitter"/>
+        <treecol id="iloPolicyCol" label="&ilo-settings-perm-policy2.label;"/>
+      </treecols>
+      <treechildren id="iloPermissionsTreeChildren"
+                    context="iloFiltersPopup"
+                    onclick="Filters.filterEdit(event, 'rclick');"
+                    ondblclick="Filters.filterEdit(event, 'dblclick');"
+                    />
+    </tree>
+    
+    <separator class="thin"/>
+    
+    <hbox id="iloPermButtons">
+      <button id="iloSetPriorityTop" disabled="true"
+              label="↑↑"
+              onclick="Filters.checkEvent('top');"/>
+      <button id="iloSetPriorityUp" disabled="true"
+              label="↑"
+              onclick="Filters.checkEvent('up');"/>
+      <button id="iloSetPriorityDown" disabled="true"
+              label="↓"
+              onclick="Filters.checkEvent('down');"/>
+      <button id="iloSetPriorityBottom" disabled="true"
+              label="↓↓"
+              onclick="Filters.checkEvent('bottom');"/>
+      <button id="iloRemoveFilter" disabled="true"
+              label="&ilo-settings-perm-removefilter.label;"
+              onclick="Filters.checkEvent('removeFilters');"
+              flex="1"/>
+      <button id="iloRemoveAllFilters"
+              label="&ilo-settings-perm-removeallfilters.label;"
+              onclick="Filters.checkEvent('removeAllFilters');"
+              flex="1"/>
+    </hbox>
+    
+  </prefpane>
+</overlay>

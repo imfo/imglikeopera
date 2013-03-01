@@ -1,0 +1,24 @@
+resource   imglikeopera-modules   modules/
+
+content    imglikeopera    chrome/content/
+content    imglikeopera    chrome/content/imglikeopera-content.xml    contentaccessible=yes
+
+overlay    chrome://browser/content/browser.xul    chrome://imglikeopera/content/imglikeopera.xul
+
+locale     imglikeopera    en-US    chrome/locale/en-US/
+locale     imglikeopera    ru-RU    chrome/locale/ru-RU/
+locale     imglikeopera    ja-JP    chrome/locale/ja-JP/
+locale     imglikeopera    de-DE    chrome/locale/de-DE/
+locale     imglikeopera    it-IT    chrome/locale/it-IT/
+locale     imglikeopera    pl-PL    chrome/locale/pl-PL/
+locale     imglikeopera    es-ES    chrome/locale/es-ES/
+locale     imglikeopera    zh-TW    chrome/locale/zh-TW/
+
+skin       imglikeopera  classic/1.0  chrome/skin/
+style      chrome://global/content/customizeToolbar.xul chrome://imglikeopera/skin/imglikeopera.css
+
+# Component registration
+component {9aa46f4f-4dc7-4c06-97af-5035170633fe} components/nsImgLikeOpera.js
+contract @mozilla.org/imglikeopera;1 {9aa46f4f-4dc7-4c06-97af-5035170633fe}
+category profile-after-change nsImgLikeOpera @mozilla.org/imglikeopera;1
+category content-policy @mozilla.org/imglikeopera;1 @mozilla.org/imglikeopera;1

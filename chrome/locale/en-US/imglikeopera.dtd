@@ -1,0 +1,90 @@
+<!-- StatusBar -->
+<!ENTITY ilo-statusbar-unloaded.label "Unloaded">
+
+<!-- Keyset -->
+<!ENTITY ilokey-switch-prev "N">
+<!ENTITY ilokey-switch-next "M">
+
+<!-- Context menu -->
+<!ENTITY ilo-context-menu-load-image.label "Load Image">
+<!ENTITY ilo-context-menu-load-image.accesskey "A">
+
+<!-- Settings (window and popup menu) -->
+<!ENTITY ilo-policy-change.label "Change policy for this page">
+<!ENTITY ilo-policy-load-dont.label "Don't load images">
+<!ENTITY ilo-policy-load-cached.label "Load cached images only">
+<!ENTITY ilo-policy-load-origsite.label "Load images for the originating Web site only">
+<!ENTITY ilo-policy-load-origsite-short.label "Load images for this site only">
+<!ENTITY ilo-policy-load-all.label "Load all images">
+
+<!-- Settings -->
+<!ENTITY ilo-settings-window.title "ImgLikeOpera settings">
+
+<!-- Settings (first tab) -->
+<!ENTITY prefpane.main.label "Cache, misc">
+
+<!ENTITY ilo-settings-defpolicy.caption "Default policy for new window/tab">
+<!ENTITY ilo-policy-inherit.label "From previous window/tab">
+
+<!ENTITY ilo-settings-cache.caption "Work with cache">
+<!ENTITY ilo-settings-cache-forced.label "Forced expiration time:">
+<!ENTITY ilo-settings-cache-time-minutes.label "minutes">
+<!ENTITY ilo-settings-cache-time-hour.label "hour">
+<!ENTITY ilo-settings-cache-time-hour2.label "hours">
+<!ENTITY ilo-settings-cache-time-hours.label "hours">
+<!ENTITY ilo-settings-cache-time-day.label "day">
+<!ENTITY ilo-settings-cache-time-days.label "days">
+<!ENTITY ilo-settings-cache-time-week.label "week">
+<!ENTITY ilo-settings-cache-time-weeks.label "weeks">
+<!ENTITY ilo-settings-cache-time-month.label "month">
+<!ENTITY ilo-settings-cache-time-months.label "months">
+
+<!ENTITY ilo-settings-placeholders.caption "Placeholders (restart browser to use)">
+<!ENTITY ilo-settings-placeholders-font.label "Font">
+<!ENTITY ilo-settings-placeholders-font-size.label "Size">
+
+<!ENTITY ilo-settings-misc.caption "Misc">
+<!ENTITY ilo-settings-misc-refresh.label "Refresh images in tab on tab select">
+<!ENTITY ilo-settings-misc-esc-key.label "Stop loading by pressing &lt;ESC&gt; key">
+<!ENTITY ilo-settings-misc-experimental-options.label "Show experimental options tab">
+
+<!ENTITY ilo-settings-button-apply.label "Apply">
+<!ENTITY ilo-settings-button-cancel.label "Cancel">
+<!ENTITY ilo-settings-button-add.label "Add">
+
+<!-- Settings (second tab) -->
+<!ENTITY prefpane.filters.label "Filters">
+<!ENTITY ilo-filters-export.label "Export">
+<!ENTITY ilo-filters-import.label "Import">
+<!ENTITY ilo-settings-perm-filter.label "Filter">
+<!ENTITY ilo-settings-perm-policy1.label "Filter policy">
+<!ENTITY ilo-settings-perm-policy2.label "Policy">
+<!ENTITY ilo-settings-perm-removefilter.label "Remove">
+<!ENTITY ilo-settings-perm-removeallfilters.label "Remove All">
+<!ENTITY ilo-filters-copy.label "Copy (create new)">
+<!ENTITY ilo-filters-modify.label "Modify">
+<!ENTITY ilo-filters-move-top.label "Move to Top">
+<!ENTITY ilo-filters-move-up.label "Move Up">
+<!ENTITY ilo-filters-move-down.label "Move Down">
+<!ENTITY ilo-filters-move-bottom.label "Move to Bottom">
+
+<!-- Settings (third tab) -->
+<!ENTITY prefpane.help.label "Help">
+
+<!-- Settings (fourth "secret" tab) -->
+<!--
+    ### Note for translators ####
+    You can translate this strings,.. but don't hurry, they are unsteady.
+-->
+<!ENTITY prefpane.experimental.label "Experimental options">
+<!ENTITY ilo-settings-policy-switchModes.label "Switch between policies on button click">
+<!ENTITY ilo-settings-flash-block.label "Flash block">
+<!ENTITY ilo-settings-load-linked-images.label "Load linked images in &#34;Load cached images&#34; mode">
+<!ENTITY ilo-settings-load-linked-images-orig-site.label "for originating Web site links only">
+<!ENTITY ilo-settings-uninstall.label "Uninstall ImgLikeOpera">
+<!ENTITY ilo-settings-delay-load.label "Delay load of images">
+<!ENTITY ilo-settings-delay-load-msec.label "msec.">
+<!ENTITY ilo-settings-ext-tabmix-sessiondata.label "Tab Mix Plus session integration">
+
+<!-- Dialog (modify) -->
+<!ENTITY ilo-settings-dialog.title "Enter filter and policy values">

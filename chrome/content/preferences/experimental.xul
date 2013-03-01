@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="../../skin/preferences/preferences.css"?>
+
+<!DOCTYPE overlay [
+  <!ENTITY prefBranch "extensions.imglikeopera@imfo.ru.">
+  <!ENTITY % imglikeoperaDTD SYSTEM "../../locale/imglikeopera.dtd">
+  %imglikeoperaDTD;
+]>
+
+<overlay id="prefpane-experimental-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+  <prefpane id="prefpane-experimental" flex="1">
+    <preferences>
+      <preference id="flash-block" name="&prefBranch;flash.block" type="bool"/>
+      <preference id="load-linked-images" name="&prefBranch;load.linked.images" type="bool"/>
+      <preference id="load-linked-imagesorig" name="&prefBranch;load.linked.imagesorig" type="bool"/>
+      <preference id="delay-load" name="&prefBranch;delay.load" type="int"/>
+      <preference id="exts-tabmix-sessiondata" name="&prefBranch;exts.tabmix.sessiondata" type="bool"/>
+      <preference id="policy-switchModes" name="&prefBranch;policy.switchModes" type="string"/>
+    </preferences>
+    
+    <vbox>
+      <vbox>
+        <label value="&ilo-settings-policy-switchModes.label;"/>
+        <hbox>
+          <checkbox id="policy-switch-modes-chk-4"
+                    tooltiptext="&ilo-policy-load-dont.label;"
+                    preference="policy-switchModes"
+                    onsyncfrompreference="return Preferences.syncFromPref(this);"
+                    onsynctopreference="return Preferences.syncToPref(this);"/>
+          <checkbox id="policy-switch-modes-chk-3"
+                    tooltiptext="&ilo-policy-load-cached.label;"
+                    preference="policy-switchModes"
+                    onsyncfrompreference="return Preferences.syncFromPref(this);"
+                    onsynctopreference="return Preferences.syncToPref(this);"/>
+          <checkbox id="policy-switch-modes-chk-2"
+                    tooltiptext="&ilo-policy-load-origsite.label;"
+                    preference="policy-switchModes"
+                    onsyncfrompreference="return Preferences.syncFromPref(this);"
+                    onsynctopreference="return Preferences.syncToPref(this);"/>
+          <checkbox id="policy-switch-modes-chk-1"
+                    tooltiptext="&ilo-policy-load-all.label;"
+                    preference="policy-switchModes"
+                    onsyncfrompreference="return Preferences.syncFromPref(this);"
+                    onsynctopreference="return Preferences.syncToPref(this);"/>
+        </hbox>
+      </vbox>
+      
+      <separator class="groove"/>
+      
+      <checkbox preference="flash-block" label="&ilo-settings-flash-block.label;"/>
+      
+      <separator class="groove"/>
+      
+      <checkbox id="checkbox-linked-images"
+                label="&ilo-settings-load-linked-images.label;"
+                preference="load-linked-images"
+                onsyncfrompreference="return Preferences.syncFromPref(this);"/>
+      <checkbox id="checkbox-linked-images-orig-site"
+                class="indent"
+                label="&ilo-settings-load-linked-images-orig-site.label;"
+                preference="load-linked-imagesorig"/>
+      
+      <separator class="groove"/>
+      
+      <hbox align="center">
+        <label value="&ilo-settings-delay-load.label;" control="delay-load-textbox"/>
+        <textbox id="delay-load-textbox" preference="delay-load" type="number"
+                 min="0" max="10000" increment="50"
+                 style="width: 6em;"/>
+        <label value="&ilo-settings-delay-load-msec.label;"/>
+      </hbox>
+      
+      <separator class="groove"/>
+      
+      <checkbox preference="exts-tabmix-sessiondata" label="&ilo-settings-ext-tabmix-sessiondata.label;"/>
+    </vbox>
+    
+  </prefpane>
+</overlay>

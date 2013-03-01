@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://imglikeopera/skin/imglikeopera.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://imglikeopera/locale/imglikeopera.dtd">
+<overlay id="imglikeoperaOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="chrome://imglikeopera/content/imglikeopera.js" type="application/x-javascript"/>
+  
+  <menupopup id="contentAreaContextMenu">
+    <menuitem id="ilo-context-menu-load-image"
+              label="&ilo-context-menu-load-image.label;"
+              accesskey="&ilo-context-menu-load-image.accesskey;"
+              insertbefore="context-viewimage"
+              oncommand="ILO.loadImg(gContextMenu.target);"
+              />
+  </menupopup>
+  
+  <keyset id="mainKeyset">
+    <key id="ilokey-switch-prev" modifiers="alt" key="n"
+         oncommand="ILO.indicatorClick('prev');"/>
+    <key id="ilokey-switch-next" modifiers="alt" key="m"
+         oncommand="ILO.indicatorClick('next');"/>
+  </keyset>
+  
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="ilo-toolbar-button"
+                   type="menu-button"
+                   class="iloButton toolbarbutton-1 chromeclass-toolbar-additional"
+                   label="ImgLikeOpera"
+                   value="policy3"
+                   context=""
+                   oncommand="ILO.indicatorClick('next');"
+                   onclick="ILO.checkToolbarbuttonClick(event);"
+                   tooltiptext="ImgLikeOpera">
+        
+        <menupopup onpopupshowing="ILO.indicatorPopup();"
+                   oncommand="ILO.indicatorClick(event.target.getAttribute('value')); event.stopPropagation();">
+          
+          <menuitem value="4" label="&ilo-policy-load-dont.label;" type="checkbox"/>
+          <menuitem value="3" label="&ilo-policy-load-cached.label;" type="checkbox"/>
+          <menuitem value="2" label="&ilo-policy-load-origsite-short.label;" type="checkbox"/>
+          <menuitem value="1" label="&ilo-policy-load-all.label;" type="checkbox"/>
+          
+          <menuseparator/>
+          
+          <menuitem value="settings"
+                    id="ilo-toolbar-button-settings"
+                    label="&ilo-settings-window.title;..."/>
+        </menupopup>
+        
+      </toolbarbutton>
+  </toolbarpalette>
+  
+</overlay>

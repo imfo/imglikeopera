@@ -1,0 +1,90 @@
+<!-- StatusBar -->
+<!ENTITY ilo-statusbar-unloaded.label "Niepobrano">
+
+<!-- Keyset -->
+<!ENTITY ilokey-switch-prev "N">
+<!ENTITY ilokey-switch-next "M">
+
+<!-- Context menu -->
+<!ENTITY ilo-context-menu-load-image.label "Pobierz obrazek">
+<!ENTITY ilo-context-menu-load-image.accesskey "A">
+
+<!-- Settings (window and popup menu) -->
+<!ENTITY ilo-policy-change.label "Zasady postępowania dla tej strony">
+<!ENTITY ilo-policy-load-dont.label "Nie pobieraj grafik">
+<!ENTITY ilo-policy-load-cached.label "Pobierz grafiki z pliku pamięci podręcznej">
+<!ENTITY ilo-policy-load-origsite.label "Pobierz tylko grafiki z odnośnikami inicjującymi otwarcie nowej witryny">
+<!ENTITY ilo-policy-load-origsite-short.label "Pobierz grafiki tylko dla tej strony">
+<!ENTITY ilo-policy-load-all.label "Pobierz wszystkie grafiki">
+
+<!-- Settings -->
+<!ENTITY ilo-settings-window.title "ImgLikeOpera - ustawienia">
+
+<!-- Settings (first tab) -->
+<!ENTITY prefpane.main.label "Pamięć podręczna, różne">
+
+<!ENTITY ilo-settings-defpolicy.caption "Domyślne zasady dla nowych okien/kart">
+<!ENTITY ilo-policy-inherit.label "Z poprzedniego okna/karty">
+
+<!ENTITY ilo-settings-cache.caption "Pamięć podręczna">
+<!ENTITY ilo-settings-cache-forced.label "Czas wygaśnięcia:">
+<!ENTITY ilo-settings-cache-time-minutes.label "minut">
+<!ENTITY ilo-settings-cache-time-hour.label "godzina">
+<!ENTITY ilo-settings-cache-time-hour2.label "godziny">
+<!ENTITY ilo-settings-cache-time-hours.label "godzin">
+<!ENTITY ilo-settings-cache-time-day.label "dzień">
+<!ENTITY ilo-settings-cache-time-days.label "dni">
+<!ENTITY ilo-settings-cache-time-week.label "tydzień">
+<!ENTITY ilo-settings-cache-time-weeks.label "tygodnie">
+<!ENTITY ilo-settings-cache-time-month.label "miesiąc">
+<!ENTITY ilo-settings-cache-time-months.label "miesięce">
+
+<!ENTITY ilo-settings-placeholders.caption "Napisy zastępcze (te zmiany wymagają ponownego uruchomienia przeglądarki)">
+<!ENTITY ilo-settings-placeholders-font.label "Czcionka">
+<!ENTITY ilo-settings-placeholders-font-size.label "Wielkość">
+
+<!ENTITY ilo-settings-misc.caption "Różne">
+<!ENTITY ilo-settings-misc-refresh.label "Odśwież grafiki w karcie po wybraniu karty">
+<!ENTITY ilo-settings-misc-esc-key.label "Stop loading by pressing &lt;ESC&gt; key">
+<!ENTITY ilo-settings-misc-experimental-options.label "Show experimental options tab">
+
+<!ENTITY ilo-settings-button-apply.label "Zastosuj">
+<!ENTITY ilo-settings-button-cancel.label "Anuluj">
+<!ENTITY ilo-settings-button-add.label "Dodaj">
+
+<!-- Settings (second tab) -->
+<!ENTITY prefpane.filters.label "Filtry">
+<!ENTITY ilo-filters-export.label "Eksportuj">
+<!ENTITY ilo-filters-import.label "Importuj">
+<!ENTITY ilo-settings-perm-filter.label "Filtr">
+<!ENTITY ilo-settings-perm-policy1.label "Tryb działania filtrów">
+<!ENTITY ilo-settings-perm-policy2.label "ID trybu">
+<!ENTITY ilo-settings-perm-removefilter.label "Usuń">
+<!ENTITY ilo-settings-perm-removeallfilters.label "Usuń wszystko">
+<!ENTITY ilo-filters-copy.label "Kopiuj (tworzy nowy filtr)">
+<!ENTITY ilo-filters-modify.label "Modyfikuj">
+<!ENTITY ilo-filters-move-top.label "Przesuń na górę">
+<!ENTITY ilo-filters-move-up.label "Przesuń w górę">
+<!ENTITY ilo-filters-move-down.label "Przesuń w dół">
+<!ENTITY ilo-filters-move-bottom.label "Przesuń na dół">
+
+<!-- Settings (third tab) -->
+<!ENTITY prefpane.help.label "Pomoc">
+
+<!-- Settings (fourth "secret" tab) -->
+<!--
+    ### Note for translators ####
+    You can translate this strings,.. but don't hurry, they are unsteady.
+-->
+<!ENTITY prefpane.experimental.label "Opcje eksperymentalne">
+<!ENTITY ilo-settings-policy-switchModes.label "Switch between policies on button click">
+<!ENTITY ilo-settings-flash-block.label "Blokowanie animacji ''flash''">
+<!ENTITY ilo-settings-load-linked-images.label "Pobierz grafiki z odnośnikami w trybie &#34;Pobierz grafiki z pliku pamięci podręcznej&#34; ">
+<!ENTITY ilo-settings-load-linked-images-orig-site.label "tylko inicjującymi otwarcie nowej witryny">
+<!ENTITY ilo-settings-uninstall.label "Odinstaluj ImgLikeOpera">
+<!ENTITY ilo-settings-delay-load.label "Opóźnienie pobrania grafik">
+<!ENTITY ilo-settings-delay-load-msec.label "msek.">
+<!ENTITY ilo-settings-ext-tabmix-sessiondata.label "Tab Mix Plus session integration">
+
+<!-- Dialog (modify) -->
+<!ENTITY ilo-settings-dialog.title "Wprowadź wartości dla filtra i zasad">

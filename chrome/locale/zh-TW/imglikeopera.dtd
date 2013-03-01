@@ -1,0 +1,90 @@
+<!-- StatusBar -->
+<!ENTITY ilo-statusbar-unloaded.label "Unloaded">
+
+<!-- Keyset -->
+<!ENTITY ilokey-switch-prev "N">
+<!ENTITY ilokey-switch-next "M">
+
+<!-- Context menu -->
+<!ENTITY ilo-context-menu-load-image.label "載入此圖">
+<!ENTITY ilo-context-menu-load-image.accesskey "A">
+
+<!-- Settings (window and popup menu) -->
+<!ENTITY ilo-policy-change.label "變更此頁處理準則">
+<!ENTITY ilo-policy-load-dont.label "擋掉所有圖片">
+<!ENTITY ilo-policy-load-cached.label "只載入快取區既有圖片">
+<!ENTITY ilo-policy-load-origsite.label "只載入該發源網站圖片(站外連結一律擋掉)">
+<!ENTITY ilo-policy-load-origsite-short.label "只載入該網頁圖片">
+<!ENTITY ilo-policy-load-all.label "載入所有圖片">
+
+<!-- Settings -->
+<!ENTITY ilo-settings-window.title "ImgLikeOpera「圖如'歌劇'」設定">
+
+<!-- Settings (first tab) -->
+<!ENTITY prefpane.main.label "快取及雜項">
+
+<!ENTITY ilo-settings-defpolicy.caption "開新視窗/分頁--預設處理準則">
+<!ENTITY ilo-policy-inherit.label "處理準則--沿用前一視窗/分頁">
+
+<!ENTITY ilo-settings-cache.caption "快取區處理">
+<!ENTITY ilo-settings-cache-forced.label "強制過期時間:">
+<!ENTITY ilo-settings-cache-time-minutes.label "分鐘">
+<!ENTITY ilo-settings-cache-time-hour.label "小時">
+<!ENTITY ilo-settings-cache-time-hour2.label "小時">
+<!ENTITY ilo-settings-cache-time-hours.label "小時">
+<!ENTITY ilo-settings-cache-time-day.label "天">
+<!ENTITY ilo-settings-cache-time-days.label "天">
+<!ENTITY ilo-settings-cache-time-week.label "星期">
+<!ENTITY ilo-settings-cache-time-weeks.label "星期">
+<!ENTITY ilo-settings-cache-time-month.label "個月">
+<!ENTITY ilo-settings-cache-time-months.label "個月">
+
+<!ENTITY ilo-settings-placeholders.caption "佔位符 (重新啟動後生效)">
+<!ENTITY ilo-settings-placeholders-font.label "字型">
+<!ENTITY ilo-settings-placeholders-font-size.label "大小">
+
+<!ENTITY ilo-settings-misc.caption "雜項">
+<!ENTITY ilo-settings-misc-refresh.label "選取分頁時更新分頁中的圖片">
+<!ENTITY ilo-settings-misc-esc-key.label "按&lt;ESC&gt;鍵中止載入">
+<!ENTITY ilo-settings-misc-experimental-options.label "顯示「測試中選項」">
+
+<!ENTITY ilo-settings-button-apply.label "套用">
+<!ENTITY ilo-settings-button-cancel.label "取消">
+<!ENTITY ilo-settings-button-add.label "新增">
+
+<!-- Settings (second tab) -->
+<!ENTITY prefpane.filters.label "過濾條件">
+<!ENTITY ilo-filters-export.label "匯出">
+<!ENTITY ilo-filters-import.label "匯入">
+<!ENTITY ilo-settings-perm-filter.label "過濾條件">
+<!ENTITY ilo-settings-perm-policy1.label "過濾條件處理準則">
+<!ENTITY ilo-settings-perm-policy2.label "處理準則">
+<!ENTITY ilo-settings-perm-removefilter.label "移除">
+<!ENTITY ilo-settings-perm-removeallfilters.label "全部移除">
+<!ENTITY ilo-filters-copy.label "複製(以便新增)">
+<!ENTITY ilo-filters-modify.label "修改">
+<!ENTITY ilo-filters-move-top.label "移到最上">
+<!ENTITY ilo-filters-move-up.label "上移">
+<!ENTITY ilo-filters-move-down.label "下移">
+<!ENTITY ilo-filters-move-bottom.label "移到最底">
+
+<!-- Settings (third tab) -->
+<!ENTITY prefpane.help.label "說明">
+
+<!-- Settings (fourth "secret" tab) -->
+<!--
+    ### Note for translators ####
+    You can translate this strings,.. but don't hurry, they are unsteady.
+-->
+<!ENTITY prefpane.experimental.label "測試中選項">
+<!ENTITY ilo-settings-policy-switchModes.label "Switch between policies on button click">
+<!ENTITY ilo-settings-flash-block.label "擋掉Flash">
+<!ENTITY ilo-settings-load-linked-images.label "於&#34;載入快取區既有圖片&#34;模式中，載入所有連結圖片">
+<!ENTITY ilo-settings-load-linked-images-orig-site.label "站外連結一律擋掉">
+<!ENTITY ilo-settings-uninstall.label "移除 ImgLikeOpera">
+<!ENTITY ilo-settings-delay-load.label "圖片載入延時">
+<!ENTITY ilo-settings-delay-load-msec.label "千分秒(msec)">
+<!ENTITY ilo-settings-ext-tabmix-sessiondata.label "Tab Mix Plus session integration">
+
+<!-- Dialog (modify) -->
+<!ENTITY ilo-settings-dialog.title "請輸入「過濾條件」、「處理準則」的值">

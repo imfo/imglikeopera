@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://imglikeopera/skin/help.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>ImgLikeOpera: Help</title>
+</head>
+<body>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>What is ILO for?</h3>
+    
+    <p>ImgLikeOpera (ILO) is useful for visiting graphics-intensive websites, when you have a slow dial-up conncetion, or when you have high priced broadband.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Browser requirements</h3>
+    
+    <p>Firefox 4.0+</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Features</h3>
+    
+    <ul>
+        <li>placeholders for blocked images (hi, LJ treads!);</li>
+        <li>(re)load image from context menu or Ctrl+rightMouseClick;</li>
+        <li>forced expiration time (5 minutes &#8211; 3 months);</li>
+        <li>one of four policies for each tab;</li>
+        <li>filters.</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Policies</h3>
+    
+    <p>You can choose one of four policies for each tab:</p>
+    
+    <ul>
+        <li>don&#8217;t load images;</li>
+        <li>load cached images only;</li>
+        <li>load images for the originating Web site only;</li>
+        <li>load all images.</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Forced expiration time</h3>
+    
+    <p>Firefox works well with the cache. And that is a problem &#8212; a usability problem. Sometimes the browser needs to check the image&#8217;s last-modified stamp or (ugh!) it reloads objects which haven&#8217;t really changed. Not every webmaster understands the mechanism of caching.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Filters</h3>
+    
+    <p>ImgLikeOpera supports two types of filters: Simple, and Regular Expression (thanks <a href="http://adblockplus.org/" target="_blank">AdBlock</a>). If there are not &#34;/&#34; symbols on both sides of the filter &#8212; then it&#8217;s a simple filter.</p>
+    
+    <p>Simple filter example:</p>
+    
+    <ul>
+        <li>in field &#8220;Filter&#8221; type http://www.example.com</li>
+        <li>in field &#8220;Filter policy&#8221; choose &#8220;Load all images&#8221; option</li>
+        <li>press &#8220;Add&#8221; button</li>
+        <li>save filters list (press &#8220;Apply&#8221; button)</li>
+    </ul>
+    
+    <p>After this step, ILO will load all graphical elements which have &#8220;http://www.example.com&#8221; in the URL or belong to site with &#8220;http://www.example.com&#8221; address, regardless of the current tab policy.</p>
+    
+    <p>You can export the filters list to disk or import an existing list as a text file.</p>
+    
+    <p>Another simple examples:</p>
+    
+    <ul>
+        <li>.gif</li>
+        <li>example.com/*.bmp</li>
+        <li>/banner</li>
+        <li>*/banner/*</li>
+    </ul>
+    
+    <p>Attention: filter rules work both with images URLs and the site address! Sometimes an image URL contain a site address, sometimes not.</p>
+    
+    <p>For people, who know RegExp:</p>
+    
+    <ul>
+        <li>/banner|annonce/</li>
+        <li>/example\.com|imfo\.ru|mozdev\.org|mozilla\.com/</li>
+        <li>/example\.com\/(ads|banner)/i</li>
+        <li>/[a-z0-9\-\.]*(some\-url\.net|imfo\.ru|mozilla\.ru)/i</li>
+    </ul>
+    
+    <p>Two remarks:</p>
+    
+    <ul>
+        <li>you can write &#34;/&#34; without &#34;\&#34;, i.e. &#34;/test/banner/&#34; and &#34;/test\/banner/&#34; are equivalent;</li>
+        <li>use &#34;i&#34; flag for case insensitive RegExp.</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Control, hotkeys, location (statusbar/toolbar)</h3>
+    
+    <p>After installation you will see the ImgLikeOpera button on the browser statusbar. Left mouse clicking (or Alt+M on the keyboard) and right mouse clicking (or Alt+N) will switch the policy of the tab; while a middle click &#8212; gives quick access to the extension settings window.</p>
+    
+    <p>Left mouse clicking on the right area of the button &#8212; will call the menu of policies and extension settings window option.</p>
+    
+    <p>There are two ways to (re)load images on the page: hover the mouse over the image, press Ctrl and the right mouse button; or choose &#8220;Load Image&#8221; from the context menu.</p>
+    
+    <p>Also, if you want to see ImgLikeOpera button on the toolbar, right click anywhere on the toolbar and select &#8220;Customize...&#8221; Simply drag and drop the ImgLikeOpera icon from opened window onto the toolbar.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>FAQ</h3>
+    
+    <ul id="faq">
+        <li>ILO did not work for me.</li>
+        <li class="a">ILO worked for me.</li>
+        
+        <li>But... ILO did not work for me!</li>
+        <li class="a">See &#8220;Bugs, feedback&#8221;.</li>
+        
+        <li>Images are still loading, like they are not in the cache. Cache settings (size and forced expiration time) are big.</li>
+        <li class="a">There is an unstable cache in Firefox. Sometimes it crashes. I&#8217;m not responsible for that. See bug <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=105843">105843</a> &#8220;Cache lost if Mozilla crashes&#8221;. You can use <a href="http://imglikeopera.mozdev.org/cache_fixer.html">Cache Fixer</a>, but use it at your own risk.</li>
+        
+        <li>How about Flash?</li>
+        <li class="a"><a href="http://flashblock.mozdev.org/" target="_blank">Flashblock</a>.</li>
+        
+        <li>I don&#8217;t like these hotkeys. Can I change them?</li>
+        <li class="a"><a href="http://mozilla.dorando.at/readme.html" target="_blank">keyconfig</a>.</li>
+        
+        <li>I don&#8217;t like these icons.</li>
+        <li class="a">Draw your own. They may even be chosen in a later version of ILO.</li>
+        
+        <li>Will this be an extensions for Mozilla Suite?</li>
+        <li class="a">I don&#8217;t know. Do you need it after &#8220;<a href="http://www.mozillazine.org/talkback.html?article=6206" target="_blank">No Official Mozilla 1.8</a>&#8221;?</li>
+        
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Bugs, feedback</h3>
+    
+    <p>Known bugs:</p>
+    <ul>
+        <li>ILO loads blocked images when the page is saved on disk.</li>
+    </ul>
+    
+    <p>I don&#8217;t know about conflicts with other extensions.</p>
+    
+    <p>If you find any other bugs, please, send a e-mail to <a href="mailto:mash-funky@mail.ru">mash-funky@mail.ru</a></p>
+    
+    <p><strong>N.B.</strong>: I&#8217;m...</p>
+    <ul>
+        <li>... not going to read letters which have exclamations like &#8220;nt WoRked! Not worKED!&#8221;;</li>
+        <li>... only likely to take action on correspondence which includes:
+            <ul>
+                <li>browser version (UA string);</li>
+                <li>list of used extensions;</li>
+                <li>steps to reproduce the issue;</li>
+                <li>and (optional) your opinion about immediate cause.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Thanks</h3>
+    
+    <p>There is always the chance of missing someone. I hope you are not very conceited. Anyway, thanks to all who help me with ILO.</p>
+
+</body>
+</html>

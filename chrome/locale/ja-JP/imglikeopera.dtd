@@ -1,0 +1,90 @@
+<!-- StatusBar -->
+<!ENTITY ilo-statusbar-unloaded.label "Unloaded">
+
+<!-- Keyset -->
+<!ENTITY ilokey-switch-prev "N">
+<!ENTITY ilokey-switch-next "M">
+
+<!-- Context menu -->
+<!ENTITY ilo-context-menu-load-image.label "画像を読み込む">
+<!ENTITY ilo-context-menu-load-image.accesskey "A">
+
+<!-- Settings (window and popup menu) -->
+<!ENTITY ilo-policy-change.label "このページのポリシーを変更">
+<!ENTITY ilo-policy-load-dont.label "画像を読み込まない">
+<!ENTITY ilo-policy-load-cached.label "キャッシュされた画像のみ読み込む">
+<!ENTITY ilo-policy-load-origsite.label "同じWebサイトにある画像のみ読み込む">
+<!ENTITY ilo-policy-load-origsite-short.label "このサイトの画像のみ読み込む">
+<!ENTITY ilo-policy-load-all.label "全ての画像を読み込む">
+
+<!-- Settings -->
+<!ENTITY ilo-settings-window.title "ImgLikeOperaの設定">
+
+<!-- Settings (first tab) -->
+<!ENTITY prefpane.main.label "キャッシュ・その他">
+
+<!ENTITY ilo-settings-defpolicy.caption "新規ウィンドウ／タブのデフォルト設定">
+<!ENTITY ilo-policy-inherit.label "前のウィンドウ／タブから引き継ぐ">
+
+<!ENTITY ilo-settings-cache.caption "キャッシュの設定">
+<!ENTITY ilo-settings-cache-forced.label "有効期限:">
+<!ENTITY ilo-settings-cache-time-minutes.label "分">
+<!ENTITY ilo-settings-cache-time-hour.label "時間">
+<!ENTITY ilo-settings-cache-time-hour2.label "時間">
+<!ENTITY ilo-settings-cache-time-hours.label "時間">
+<!ENTITY ilo-settings-cache-time-day.label "日">
+<!ENTITY ilo-settings-cache-time-days.label "日">
+<!ENTITY ilo-settings-cache-time-week.label "週間">
+<!ENTITY ilo-settings-cache-time-weeks.label "週間">
+<!ENTITY ilo-settings-cache-time-month.label "ヶ月">
+<!ENTITY ilo-settings-cache-time-months.label "ヶ月">
+
+<!ENTITY ilo-settings-placeholders.caption "プレースホルダーの設定（再起動後に有効）">
+<!ENTITY ilo-settings-placeholders-font.label "フォント">
+<!ENTITY ilo-settings-placeholders-font-size.label "サイズ">
+
+<!ENTITY ilo-settings-misc.caption "その他">
+<!ENTITY ilo-settings-misc-refresh.label "タブ選択時にそのタブ上の画像を再読み込みする">
+<!ENTITY ilo-settings-misc-esc-key.label "Stop loading by pressing &lt;ESC&gt; key">
+<!ENTITY ilo-settings-misc-experimental-options.label "Show experimental options tab">
+
+<!ENTITY ilo-settings-button-apply.label "適用">
+<!ENTITY ilo-settings-button-cancel.label "キャンセル">
+<!ENTITY ilo-settings-button-add.label "追加">
+
+<!-- Settings (second tab) -->
+<!ENTITY prefpane.filters.label "フィルタ">
+<!ENTITY ilo-filters-export.label "エクスポート">
+<!ENTITY ilo-filters-import.label "インポート">
+<!ENTITY ilo-settings-perm-filter.label "フィルタ">
+<!ENTITY ilo-settings-perm-policy1.label "フィルタポリシー">
+<!ENTITY ilo-settings-perm-policy2.label "ポリシー">
+<!ENTITY ilo-settings-perm-removefilter.label "削除">
+<!ENTITY ilo-settings-perm-removeallfilters.label "全て削除">
+<!ENTITY ilo-filters-copy.label "コピー（新規作成）">
+<!ENTITY ilo-filters-modify.label "修正">
+<!ENTITY ilo-filters-move-top.label "最上部へ">
+<!ENTITY ilo-filters-move-up.label "一つ上へ">
+<!ENTITY ilo-filters-move-down.label "一つ下へ">
+<!ENTITY ilo-filters-move-bottom.label "最下部へ">
+
+<!-- Settings (third tab) -->
+<!ENTITY prefpane.help.label "ヘルプ">
+
+<!-- Settings (fourth "secret" tab) -->
+<!--
+    ### Note for translators ####
+    You can translate this strings,.. but don't hurry, they are unsteady.
+-->
+<!ENTITY prefpane.experimental.label "実験的なオプション">
+<!ENTITY ilo-settings-policy-switchModes.label "Switch between policies on button click">
+<!ENTITY ilo-settings-flash-block.label "Flashをブロックする">
+<!ENTITY ilo-settings-load-linked-images.label "「キャッシュされた画像のみ読み込む」に設定されている場合でも、リンクになっている画像は読み込む">
+<!ENTITY ilo-settings-load-linked-images-orig-site.label "同じWebサイトにある画像のみ読み込む">
+<!ENTITY ilo-settings-uninstall.label "Uninstall ImgLikeOpera">
+<!ENTITY ilo-settings-delay-load.label "画像読み込みを遅延させる">
+<!ENTITY ilo-settings-delay-load-msec.label "msec.">
+<!ENTITY ilo-settings-ext-tabmix-sessiondata.label "Tab Mix Plus session integration">
+
+<!-- Dialog (modify) -->
+<!ENTITY ilo-settings-dialog.title "フィルタとポリシーの値を入力">

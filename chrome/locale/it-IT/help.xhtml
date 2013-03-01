@@ -1,0 +1,227 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://imglikeopera/skin/help.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
+<head>
+<title>Aiuto per ImgLikeOpera</title>
+</head>
+<body>
+
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+       <h3><strong>Aiuto per l'estensione ImgLikeOpera</strong></h3>
+
+       <p>In questa sezione di aiuto sono state inserite sia informazioni generiche sull'estensione ImgLikeOpera che alcune indicazioni specifiche che facilitano al massimo l'uso dell'estensione.</p>
+       
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>A cosa serve</h3>
+    
+    <p>ImgLikeOpera è un'estensione che permette di gestire il caricamento o meno delle immagini scegliendo fra più funzioni.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Compatibilità</h3>
+    
+    <p>Firefox 4.0+</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Funzioni</h3>
+
+   <p>ImgLikeOpera permette di:</p>
+    
+    <ul>
+        <li>collocare delle targhette al posto delle immagini che sono state bloccate (merito dei suggerimenti di LJ!);</li>
+        <li>caricare/ricaricare le immagini attraverso menu contestuale oppure Ctrl+clic con tasto destro del mouse;</li>
+        <li>impostare un tempo di scadenza forzato per le immagini variabile (5 minuti - 3 mesi);</li>
+        <li>applicare regole differenti per ogni singola scheda;</li>
+        <li>applicare singoli filtri e liste di filtri.</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Regole</h3>
+    
+    <p>&Egrave; possibile impostare una delle seguenti quattro regole per ogni singola scheda:</p>
+    
+    <ul>
+        <li>Non caricare alcuna immagine</li>
+        <li>Carica solo le immagini nella cache</li>
+        <li>Carica le immagini solo per il sito web di origine</li>
+        <li>Carica tutte le immagini</li>
+    </ul>
+
+    <p>Nota bene:</p>
+    
+    <ul>
+        <li>Per le immagini di sfondo si può impostare <strong>solamente</strong> l'opzione globale &#8220;Carica le immagini da css&#8221; che è valida per tutte le schede e le finestre del browser.</li>
+       <li>L'opzione globale &#8220;Carica le immagini da css&#8221; è visualizzabile e selezionabile solamente facendo clic con il tasto sinistro del mouse sulla parte destra dell'area del pulsante nella barra di stato.</li>
+       <li>In caso si selezioni l'opzione globale &#8220;Carica le immagini da css&#8221; verranno visualizzate solo le immagini di sfondo nella cache.</li>
+    </ul>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Tempo di scadenza delle immagini</h3>
+    
+    <p>Firefox ha un'ottima gestione della cache, ma allo stesso tempo ciò potrebbe rappresentare un problema per il corretto utilizzo delle opzioni inerenti &#8220;Dopo quanto tempo forzare la scadenza?&#8221; per le quali è necessario verificare la data di ultima modifica delle immagini.</p>
+   
+   <p>Nota bene:</p>
+   <p>Purtroppo non tutti i webmaster conoscono a perfezione il meccanismo della cache di Firefox; potrebbe quindi accadere che...</p>
+    <ul>
+       <li>...vengano ricaricate immagini che non sono state affatto modificate.</li>
+       <li>...non vengano ricaricate immagini che invece sono state modificate.</li>
+    </ul>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Filtri</h3>
+    
+    <p>ImgLikeOpera supporta sia filtri semplici che espressioni regolari (grazie ad <a href="http://adblockplus.org/" target="_blank">AdBlock</a>). Un filtro semplice è un filtro a cui manca il simbolo &#34;/&#34; sia all'inizio che alla fine del filtro immesso.</p>
+    
+    <p>Come aggiungere un filtro semplice:</p>
+    
+    <ul>
+        <li>inserire nel campo &#8220;Filtro&#8221;  http://www.example.com</li>
+        <li>per il campo &#8220;Regola del filtro&#8221; selezionare l'opzione &#8220;Carica tutte le immagini&#8221; </li>
+        <li>fare clic su &#8220;Aggiungi&#8221; </li>
+        <li>salvare la lista dei filtri (fare clic su &#8220;Applica&#8221; )</li>
+    </ul>                    
+    
+    <p>Dopo queste azioni tutte le immagini presenti nell'URL &#8220;http://www.example.com&#8221; verranno caricate, indipendentemente dalla regola impostata per la singola scheda.</p>
+    
+    <p>La lista dei filtri può essere sia esportata che importata sotto forma di file di testo (txt).</p>
+    
+    <p>Esempi di filtri semplici:</p>
+    
+    <ul>
+        <li>.gif</li>
+        <li>example.com/*.bmp</li>
+        <li>/banner</li>
+        <li>*/banner/*</li>
+    </ul>
+    
+    <p>Attenzione! Le regole dei filtri funzionano solo applicate a URL di immagini, e non a indirizzi di siti web! A volte URL di immagini contengono l'indirizzo di un sito, a volte no. Per esempio, nella pagina www.yahoo.com le immagini contengono i seguenti indirizzi web:</p>
+    
+    <ul>
+        <li>http://us.i1.yimg.com/us.yimg.com/i/...</li>
+        <li>http://us.a1.yimg.com/us.yimg.com/a/...</li>
+        <li>http://scd.mm-c.yimg.com/image...</li>
+        <li>etc.</li>
+    </ul>
+    
+    <p>Nel caso specifico di www.yahoo.com si possono usare i seguenti filtri:</p>
+    
+    <ul>
+        <li>yimg.com</li>
+        <li>us.yimg.com</li>
+        <li>yimg.com/us.yimg.com</li>
+        <li>etc.</li>
+    </ul>
+    
+    <p>Le espressioni regolari si applicano nel seguente modo:</p>
+    
+    <ul>
+        <li>/banner|annonce/</li>
+        <li>/example\.com|imfo\.ru|mozdev\.org|mozilla\.com/</li>
+        <li>/[a-z0-9\-\.]/</li>
+    </ul>
+    
+    <p>Nota bene:</p>
+    
+    <ul>
+        <li>Un filtro può essere inserito sia usando questo primo simbolo "/" che questo secondo simbolo "\" . Esempio: &#34;/test/banner/&#34; e &#34;/test\/banner/&#34; si equivalgono.</li>
+        <li>Per filtri non corrispondenti a espressioni regolari usare il simbolo &#34;i&#34;. Esempio: (some\-url\.net|imfo\.ru|mozilla\.ru)/i</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Ctrl, combinazione di tasti, posizionamento del pulsante (barra di stato/degli strumenti)</h3>
+    
+    <p>Dopo l'installazione di ImgLikeOpera viene automaticamente posizionato nella barra di stato il relativo pulsante, tramite il quale è possibile:</p>
+ 
+    <ul> 
+        <li>selezionare direttamente ed in sequenza le regole dei filtri facendo clic con il tasto sinistro del mouse (oppure tramite la combinazione da tastiera Alt+M);</li>
+        <li>selezionare direttamente ed in sequenza le regole dei filtri facendo clic con il tasto destro del mouse (oppure tramite la combinazione da tastiera Alt+N);</li>
+        <li>accedere direttamente alla finestra delle impostazioni di ImglikeOpera facendo clic con il tasto centrale del mouse</li>
+        <li>accedere al menu contestuale per visualizzare/selezionare regole dei filtri ed impostazioni facendo clic con il tasto sinistro del mouse sulla parte destra dell'area del pulsante</li>
+    </ul>
+
+    <p>&Egrave; possibile caricare/ricaricare le immagini di una pagina con uno dei due seguenti metodi:</p>
+    
+    <ul>   
+        <li>puntare il mouse sopra l'immagine da caricare/ricaricare e premere Ctrl+clic con tasto destro del mouse</li>
+        <li>puntare il mouse sopra l'immagine da caricare/ricaricare e selezionare &#8220;Carica immagine&#8221; nel menu contestuale.</li>
+    </ul>
+
+    <p>&Egrave; possibile posizionare il pulsante di ImgLikeOpera anche nelle barre degli strumenti con uno dei due seguenti metodi:</p>
+    
+    <ul>   
+            <li>Selezionare nel menu principale della finestra del browser &#8220;Visualizza&#8221; -> &#8220;Barre degli strumenti&#8221; -> &#8220;Personalizza...&#8221; e trascinando l'icona con il mouse dalla finestra &#8220;Personalizza barra degli strumenti&#8221; posizionarla dove più si preferisca nelle barre degli strumenti.</li>
+            <li>Posizionare il mouse su un qualsiasi punto delle barre degli strumenti, fare clic con il tasto destro del mouse e selezionare &#8220;Personalizza...&#8221; e trascinando l'icona con il mouse dalla finestra &#8220;Personalizza barra degli strumenti&#8221; posizionarla dove più si preferisca nelle barre degli strumenti.</li>
+    </ul>
+
+    <p>Nota bene:</p>
+        
+        <ul>
+            <li>Il pulsante di ImgLikeOpera nella barra di stato <strong>non è eliminabile o spostabile</strong> dalla sua posizione predefinita.</li>
+            <li>&Egrave; necessario <strong>riavviare il browser</strong> per rendere effettive le modifiche.</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>FAQ</h3>
+    
+    <ul id="faq">
+        <li>ImgLikeOpera non funziona.</li>
+        <li class="a">ImgLikeOpera funziona per me...</li>
+        
+        <li>Ma... ImgLikeOpera non funziona per me!</li>
+        <li class="a">In questo caso leggere &#8220;Bug e segnalazioni&#8221;.</li>
+        
+        <li>Le immagini sembrano in caricamento continuo, come se non fossero nella cache. Eppure nelle impostazioni della cache (dimensione e tempo di scadenza forzato) sono stati inseriti valori elevati.</li>
+        <li class="a">La cache potrebbe essere instabile, oppure potrebbe essere una conseguenza di un crash di Firefox. In questo caso non è responsabile ImgLikeOpera.</li>
+        
+        <li>Si possono gestire le immagini in flash? E se sì, come?</li>
+        <li class="a">Sì! &Egrave; possibile usare l'estensione <a href="http://flashblock.mozdev.org/" target="_blank">Flashblock</a>.</li>
+        
+        <li>Alcune combinazioni di tasti non mi piacciono. Si possono modificare?</li>
+        <li class="a">Sì! &Egrave; possibile usare l'estensione <a href="http://mozilla.dorando.at/readme.html" target="_blank">keyconfig</a>.</li>
+        
+        <li>Alcune icone non mi piacciono. Si possono modificare?</li>
+        <li class="a">Sì! &Egrave; possibile disegnarne di proprie e sostituirle manualmente ad ogni aggiornamento. Probabilmente in una versione futura di ImgLikeOpera verrà integrata un'opzione per avere più interfacce grafiche dell'estensione.</li>
+        
+        <li>Esiste una versione dell'estensione per Mozilla Suite?</li>
+        <li class="a">Al momento non esiste e neppure in futuro ci sarà. Tale scelta è legata alla <a href="http://www.mozillazine.org/talkback.html?article=6206" target="_blank">fine ufficiale del supporto a Mozilla Suite 1.8</a>&#8221; da parte della Mozilla Foundation</li>
+        
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Bug conosciuti</h3>
+    
+    <ul>
+        <li>Quando si salva una pagina web sul proprio computer il caricamento delle immagini viene bloccato.</li>
+    </ul>
+    
+    <p>Nessuna incompatibilità nota con altre estensioni</p>
+    
+    <p>In caso si riscontrassero nuovi bug, inviare cortesemente un'email di segnalazione a <a href="mailto:mash-funky@mail.ru">mash-funky@mail.ru</a></p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3><p><strong>Segnalazioni</strong></p></h3>
+
+    <p><strong><em>Verranno valutate le segnalazioni solo se scritte in lingua inglese o russa e contenenti le seguenti informazioni:</em></strong></p>
+    <ul>
+        <li>versione del browser (stringa di identificazione);</li>
+        <li>lista delle estensioni usate;</li>
+        <li>sequenza delle azioni per riprodurre il bug;</li>
+        <li>opinioni sulle probabili cause (facoltative);</li>
+       <li>opinioni sulle possibili soluzioni (facoltative).</li>
+    </ul>
+    
+    <p><strong><em>Non verrà prese in considerazione alcuna segnalazione, neppure se scritta in lingua inglese o russa, contenente:</em></strong></p>
+    <ul>
+        <li>espressioni del tipo &#8220;nt WoRked! Not worKED!!!&#8221;;</li>
+        <li>descrizioni incomplete/inesatte o non riproducibili del bug.</li>
+    </ul>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Ringraziamenti</h3>
+    
+    <p>Per evitare di dimenticare singole persone, i ringraziamenti sono genericamente rivolti a tutti coloro che hanno contribuito allo sviluppo di ImgLikeOpera.</p>
+    
+</body>
+</html>

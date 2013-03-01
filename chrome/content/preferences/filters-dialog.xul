@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="../../skin/preferences/preferences.css"?>
+
+<!DOCTYPE dialog [
+  <!ENTITY prefBranch "extensions.imglikeopera@imfo.ru.">
+  <!ENTITY % imglikeoperaDTD SYSTEM "../../locale/imglikeopera.dtd">
+  %imglikeoperaDTD;
+]>
+
+<dialog id="imglikeoperaSettingsDialog" style="width:32em;"
+        title="&ilo-settings-dialog.title;"
+        onload="onLoad();"
+        ondialogaccept="return onOK();"
+        persist="screenX screenY"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <hbox orient="vertical">
+    <label value="&ilo-settings-perm-filter.label;:" control="iloModifyFilter"/>
+    <textbox id="iloModifyFilter"/>
+    <label value="&ilo-settings-perm-policy1.label;:" control="iloModifyPolicy"/>
+    <menulist id="iloModifyPolicy">
+      <menupopup>
+        <menuitem label="[4] &ilo-policy-load-dont.label;"/>
+        <menuitem label="[3] &ilo-policy-load-cached.label;"/>
+        <menuitem label="[2] &ilo-policy-load-origsite.label;"/>
+        <menuitem label="[1] &ilo-policy-load-all.label;"/>
+     </menupopup>
+   </menulist>
+   <separator class="thin"/>
+  </hbox>
+  
+  <script type="application/x-javascript"><![CDATA[
+    var rModifyFilter = document.getElementById("iloModifyFilter");
+    var rModifyPolicy = document.getElementById("iloModifyPolicy");
+    
+    function onLoad() {
+      rModifyFilter.setAttribute("value", window.arguments[0][0]);
+      rModifyPolicy.selectedIndex = 4 - window.arguments[0][1];
+    }
+    
+    function onOK() {
+      var filter = rModifyFilter.value.replace(/\s*/g, "");
+      var policy = 4 - rModifyPolicy.selectedIndex;
+      
+      if (filter != "")
+        window.arguments[1].rv = [filter, policy];
+    }
+  ]]></script>
+
+</dialog>

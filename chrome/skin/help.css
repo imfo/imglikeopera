@@ -1,0 +1,21 @@
+html, body {margin:0; padding:0; color:#000; background:#f7f7f7;}
+body {margin:.5em 1em; font:69%/135% verdana, tahoma, arial, sans-serif;}
+
+h3 {
+    font-size:1.1em;
+    background:#d6d6d6;
+    margin-left:-.5em; margin-right:-.5em;
+    padding:.3em 1em;
+    border-top:3px double #666;
+    border-bottom:1px solid #888;
+    }
+
+ul {padding-left:2.5em;}
+p {margin:.8em .5em;}
+a {color:blue; text-decoration:underline;}
+
+#faq {padding-left:.5em;}
+#faq li {list-style-type:none;}
+#faq li:before {content:"Q: "; font-weight:bold;}
+#faq li.a:before {content:"A: ";}
+#faq li.a {margin-bottom:1em;}

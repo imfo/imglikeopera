@@ -1,0 +1,90 @@
+<!-- StatusBar -->
+<!ENTITY ilo-statusbar-unloaded.label "Non caricate">
+
+<!-- Keyset -->
+<!ENTITY ilokey-switch-prev "N">
+<!ENTITY ilokey-switch-next "M">
+
+<!-- Context menu -->
+<!ENTITY ilo-context-menu-load-image.label "Carica immagine">
+<!ENTITY ilo-context-menu-load-image.accesskey "A">
+
+<!-- Settings (window and popup menu) -->
+<!ENTITY ilo-policy-change.label "Cambia regola per questa pagina">
+<!ENTITY ilo-policy-load-dont.label "Non caricare alcuna immagine">
+<!ENTITY ilo-policy-load-cached.label "Carica solo le immagini nella cache">
+<!ENTITY ilo-policy-load-origsite.label "Carica le immagini solo per il sito web di origine">
+<!ENTITY ilo-policy-load-origsite-short.label "Carica le immagini solo per questo sito">
+<!ENTITY ilo-policy-load-all.label "Carica tutte le immagini">
+
+<!-- Settings -->
+<!ENTITY ilo-settings-window.title "Impostazioni di ImgLikeOpera">
+
+<!-- Settings (first tab) -->
+<!ENTITY prefpane.main.label "Cache e varie">
+
+<!ENTITY ilo-settings-defpolicy.caption "Regola predefinita per una nuova finestra/scheda">
+<!ENTITY ilo-policy-inherit.label "Come per la precedente finestra/scheda">
+
+<!ENTITY ilo-settings-cache.caption "Cache">
+<!ENTITY ilo-settings-cache-forced.label "Dopo quanto tempo forzare la scadenza?">
+<!ENTITY ilo-settings-cache-time-minutes.label "minuti">
+<!ENTITY ilo-settings-cache-time-hour.label "ora">
+<!ENTITY ilo-settings-cache-time-hour2.label "ore">
+<!ENTITY ilo-settings-cache-time-hours.label "ore">
+<!ENTITY ilo-settings-cache-time-day.label "giorno">
+<!ENTITY ilo-settings-cache-time-days.label "giorni">
+<!ENTITY ilo-settings-cache-time-week.label "settimana">
+<!ENTITY ilo-settings-cache-time-weeks.label "settimane">
+<!ENTITY ilo-settings-cache-time-month.label "mese">
+<!ENTITY ilo-settings-cache-time-months.label "mesi">
+
+<!ENTITY ilo-settings-placeholders.caption "Caratteri e dimensione (riavviare il browser per attivare le modifiche)">
+<!ENTITY ilo-settings-placeholders-font.label "Carattere">
+<!ENTITY ilo-settings-placeholders-font-size.label "Dimensione">
+
+<!ENTITY ilo-settings-misc.caption "Varie">
+<!ENTITY ilo-settings-misc-refresh.label "Aggiornare le immagini nella scheda selezionata">
+<!ENTITY ilo-settings-misc-esc-key.label "Stop loading by pressing &lt;ESC&gt; key">
+<!ENTITY ilo-settings-misc-experimental-options.label "Show experimental options tab">
+
+<!ENTITY ilo-settings-button-apply.label "Applica">
+<!ENTITY ilo-settings-button-cancel.label "Annulla">
+<!ENTITY ilo-settings-button-add.label "Aggiungi">
+
+<!-- Settings (second tab) -->
+<!ENTITY prefpane.filters.label "Filtri">
+<!ENTITY ilo-filters-export.label "Esporta">
+<!ENTITY ilo-filters-import.label "Importa">
+<!ENTITY ilo-settings-perm-filter.label "Filtro">
+<!ENTITY ilo-settings-perm-policy1.label "Regola del filtro">
+<!ENTITY ilo-settings-perm-policy2.label "Regola">
+<!ENTITY ilo-settings-perm-removefilter.label "Rimuovi">
+<!ENTITY ilo-settings-perm-removeallfilters.label "Rimuovere tutti">
+<!ENTITY ilo-filters-copy.label "Copia (crea nuovo)">
+<!ENTITY ilo-filters-modify.label "Modifica">
+<!ENTITY ilo-filters-move-top.label "Sposta all'inizio">
+<!ENTITY ilo-filters-move-up.label "Sposta su">
+<!ENTITY ilo-filters-move-down.label "Sposta giù">
+<!ENTITY ilo-filters-move-bottom.label "Sposta alla fine">
+
+<!-- Settings (third tab) -->
+<!ENTITY prefpane.help.label "Aiuto">
+
+<!-- Settings (fourth "secret" tab) -->
+<!--
+    ### Note for translators ####
+    You can translate this strings,.. but don't hurry, they are unsteady.
+-->
+<!ENTITY prefpane.experimental.label "Experimental options">
+<!ENTITY ilo-settings-policy-switchModes.label "Switch between policies on button click">
+<!ENTITY ilo-settings-flash-block.label "Flash block">
+<!ENTITY ilo-settings-load-linked-images.label "Load linked images in &#34;Load cached images&#34; mode">
+<!ENTITY ilo-settings-load-linked-images-orig-site.label "for originating Web site links only">
+<!ENTITY ilo-settings-uninstall.label "Uninstall ImgLikeOpera">
+<!ENTITY ilo-settings-delay-load.label "Delay load of images">
+<!ENTITY ilo-settings-delay-load-msec.label "msec.">
+<!ENTITY ilo-settings-ext-tabmix-sessiondata.label "Tab Mix Plus session integration">
+
+<!-- Dialog (modify) -->
+<!ENTITY ilo-settings-dialog.title "Inserire un filtro ed il valore della regola">

@@ -1,0 +1,90 @@
+<!-- StatusBar -->
+<!ENTITY ilo-statusbar-unloaded.label "не работает">
+
+<!-- Keyset -->
+<!ENTITY ilokey-switch-prev "N">
+<!ENTITY ilokey-switch-next "M">
+
+<!-- Context menu -->
+<!ENTITY ilo-context-menu-load-image.label "Загрузить изображение">
+<!ENTITY ilo-context-menu-load-image.accesskey "Г">
+
+<!-- Settings (window and popup menu) -->
+<!ENTITY ilo-policy-change.label "Изменить политику этого окна">
+<!ENTITY ilo-policy-load-dont.label "Не загружать изображения">
+<!ENTITY ilo-policy-load-cached.label "Загружать только из кеша">
+<!ENTITY ilo-policy-load-origsite.label "Загружать только с этого же сайта">
+<!ENTITY ilo-policy-load-origsite-short.label "Загружать только с этого же сайта">
+<!ENTITY ilo-policy-load-all.label "Загружать всё">
+
+<!-- Settings -->
+<!ENTITY ilo-settings-window.title "Настройки">
+
+<!-- Settings (first tab) -->
+<!ENTITY prefpane.main.label "Кеш, разное">
+
+<!ENTITY ilo-settings-defpolicy.caption "Политика новых окон/табов по умолчанию">
+<!ENTITY ilo-policy-inherit.label "Как у предыдущего окна/таба">
+
+<!ENTITY ilo-settings-cache.caption "Кеш">
+<!ENTITY ilo-settings-cache-forced.label "Принудительное кеширование на:">
+<!ENTITY ilo-settings-cache-time-minutes.label "минут">
+<!ENTITY ilo-settings-cache-time-hour.label "час">
+<!ENTITY ilo-settings-cache-time-hour2.label "часа">
+<!ENTITY ilo-settings-cache-time-hours.label "часов">
+<!ENTITY ilo-settings-cache-time-day.label "день">
+<!ENTITY ilo-settings-cache-time-days.label "дня">
+<!ENTITY ilo-settings-cache-time-week.label "неделю">
+<!ENTITY ilo-settings-cache-time-weeks.label "недели">
+<!ENTITY ilo-settings-cache-time-month.label "месяц">
+<!ENTITY ilo-settings-cache-time-months.label "месяца">
+
+<!ENTITY ilo-settings-placeholders.caption "Место под картинки (вступит в силу после перезапуска браузера)">
+<!ENTITY ilo-settings-placeholders-font.label "Шрифт">
+<!ENTITY ilo-settings-placeholders-font-size.label "Размер">
+
+<!ENTITY ilo-settings-misc.caption "Разное">
+<!ENTITY ilo-settings-misc-refresh.label "Обновлять содержимое при смене вкладок">
+<!ENTITY ilo-settings-misc-esc-key.label "Прерывать загрузку графики при нажатии &lt;ESC&gt;">
+<!ENTITY ilo-settings-misc-experimental-options.label "Показать вкладку &#34;Экспериментальные настройки&#34;">
+
+<!ENTITY ilo-settings-button-apply.label "Сохранить">
+<!ENTITY ilo-settings-button-cancel.label "Отмена">
+<!ENTITY ilo-settings-button-add.label "Добавить">
+
+<!-- Settings (second tab) -->
+<!ENTITY prefpane.filters.label "Фильтры">
+<!ENTITY ilo-filters-export.label "Экспорт">
+<!ENTITY ilo-filters-import.label "Импорт">
+<!ENTITY ilo-settings-perm-filter.label "Фильтр">
+<!ENTITY ilo-settings-perm-policy1.label "Политика фильтра">
+<!ENTITY ilo-settings-perm-policy2.label "Политика">
+<!ENTITY ilo-settings-perm-removefilter.label "Удалить">
+<!ENTITY ilo-settings-perm-removeallfilters.label "Удалить все">
+<!ENTITY ilo-filters-copy.label "Копировать (новый фильтр)">
+<!ENTITY ilo-filters-modify.label "Изменить">
+<!ENTITY ilo-filters-move-top.label "Переместить в начало">
+<!ENTITY ilo-filters-move-up.label "Переместить выше">
+<!ENTITY ilo-filters-move-down.label "Переместить ниже">
+<!ENTITY ilo-filters-move-bottom.label "Переместить в конец">
+
+<!-- Settings (third tab) -->
+<!ENTITY prefpane.help.label "Помощь">
+
+<!-- Settings (fourth "secret" tab) -->
+<!--
+    ### Note for translators ####
+    You can translate this strings,.. but don't hurry, they are unsteady.
+-->
+<!ENTITY prefpane.experimental.label "Экспериментальные настройки">
+<!ENTITY ilo-settings-policy-switchModes.label "При клике по кнопке переключать между">
+<!ENTITY ilo-settings-flash-block.label "Блокирование активного содержимого (Flash)">
+<!ENTITY ilo-settings-load-linked-images.label "Загрузка изображений-ссылок при политике &#34;Загружать только из кеша&#34;">
+<!ENTITY ilo-settings-load-linked-images-orig-site.label "только для ссылок, ведущих на этот же сайт">
+<!ENTITY ilo-settings-uninstall.label "Удалить ImgLikeOpera">
+<!ENTITY ilo-settings-delay-load.label "Задержка загрузки графики">
+<!ENTITY ilo-settings-delay-load-msec.label "мсек.">
+<!ENTITY ilo-settings-ext-tabmix-sessiondata.label "Интеграция с менеджером сессий в Tab Mix Plus">
+
+<!-- Dialog (modify) -->
+<!ENTITY ilo-settings-dialog.title "Изменение существующего фильтра">

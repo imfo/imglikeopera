@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<bindings xmlns="http://www.mozilla.org/xbl">
+<!--
+  Thanks FlashBlock
+  http://flashblock.mozdev.org/
+-->
+<binding id="sifr-alternate">
+  <implementation>
+    <constructor>
+    <![CDATA[
+      var span = this.nextSibling;
+      
+      if (!span || span.tagName != "span")
+        return;
+      
+      with (span.style) {
+        visibility    = "visible !important";
+        display       = "block !important";
+        position      = "static !important";
+        left          = "auto !important";
+        top           = "auto !important";
+        height        = "auto !important";
+        width         = "auto !important";
+        //letterSpacing = "normal !important";
+      }
+    ]]>
+    </constructor>
+  </implementation>
+</binding>
+
+<binding id="sifr-alternate-restore">
+  <implementation>
+    <constructor>
+    <![CDATA[
+      var span = this.nextSibling;
+      
+      if (!span || span.tagName != "span")
+        return;
+      
+      with (span.style) {
+        height   = 0;
+        width    = 0;
+        display  = "none !important";
+        position = "absolute";
+        overflow = "hidden";
+      }
+    ]]>
+    </constructor>
+  </implementation>
+</binding>
+
+<binding id="active-content">
+  <implementation>
+    <constructor>
+    <![CDATA[
+      if (getComputedStyle(this, null).display == "inline") {
+        this.style.display = "-moz-inline-block";
+        this.style.display = "inline-block";
+      }
+      return;
+    ]]>
+    </constructor>
+  </implementation>
+</binding>
+
+</bindings>

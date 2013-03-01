@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="../../skin/preferences/preferences.css"?>
+
+<!DOCTYPE overlay [
+  <!ENTITY prefBranch "extensions.imglikeopera@imfo.ru.">
+  <!ENTITY % imglikeoperaDTD SYSTEM "../../locale/imglikeopera.dtd">
+  %imglikeoperaDTD;
+]>
+
+<overlay id="prefpane-main-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+  <prefpane id="prefpane-main" flex="1">
+    <preferences>
+      <preference id="policy-default" name="&prefBranch;policy.default" type="int"/>
+      <preference id="policy-inherit" name="&prefBranch;policy.inherit" type="bool"/>
+      <preference id="expiration-time" name="&prefBranch;expiration.time" type="int"/>
+      <preference id="placeholders-font-name" name="&prefBranch;placeholders.font.name" type="string"/>
+      <preference id="placeholders-font-size" name="&prefBranch;placeholders.font.size" type="int"/>
+      <preference id="tabs-refresh" name="&prefBranch;tabs.refresh" type="bool"/>
+      <preference id="esc-key" name="&prefBranch;esc.key" type="bool"/>
+    </preferences>
+    
+    <groupbox>
+      <caption label="&ilo-settings-defpolicy.caption;"/>
+      <menulist preference="policy-default">
+        <menupopup>
+          <menuitem label="&ilo-policy-load-dont.label;" value="4"/>
+          <menuitem label="&ilo-policy-load-cached.label;" value="3"/>
+          <menuitem label="&ilo-policy-load-origsite.label;" value="2"/>
+          <menuitem label="&ilo-policy-load-all.label;" value="1"/>
+        </menupopup>
+      </menulist>
+      <checkbox preference="policy-inherit" label="&ilo-policy-inherit.label;"/>
+    </groupbox>
+    
+    <groupbox>
+      <caption label="&ilo-settings-cache.caption;"/>
+      <hbox>
+        <label value="&ilo-settings-cache-forced.label;" control="expiration-time-menulist"/>
+        <menulist id="expiration-time-menulist" preference="expiration-time">
+          <menupopup>
+            <menuitem value="0" label="---"/>
+            <menuitem value="300" label="5 &ilo-settings-cache-time-minutes.label;"/>
+            <menuitem value="900" label="15 &ilo-settings-cache-time-minutes.label;"/>
+            <menuitem value="3600" label="1 &ilo-settings-cache-time-hour.label;"/>
+            <menuitem value="7200" label="2 &ilo-settings-cache-time-hour2.label;"/>
+            <menuitem value="10800" label="3 &ilo-settings-cache-time-hour2.label;"/>
+            <menuitem value="21600" label="6 &ilo-settings-cache-time-hours.label;"/>
+            <menuitem value="43200" label="12 &ilo-settings-cache-time-hours.label;" selected="true"/>
+            <menuitem value="86400" label="1 &ilo-settings-cache-time-day.label;"/>
+            <menuitem value="259200" label="3 &ilo-settings-cache-time-days.label;"/>
+            <menuitem value="604800" label="1 &ilo-settings-cache-time-week.label;"/>
+            <menuitem value="1209600" label="2 &ilo-settings-cache-time-weeks.label;"/>
+            <menuitem value="2419200" label="1 &ilo-settings-cache-time-month.label;"/>
+            <menuitem value="7257600" label="3 &ilo-settings-cache-time-months.label;"/>
+          </menupopup>
+        </menulist>
+      </hbox>
+    </groupbox>
+    
+    <groupbox>
+      <caption label="&ilo-settings-placeholders.caption;"/>
+      <grid>
+        <columns>
+          <column/>
+          <column flex="1"/>
+          <column/>
+          <column/>
+        </columns>
+        <rows>
+          <row>
+            <hbox pack="end">
+              <label value="&ilo-settings-placeholders-font.label;:" control="placeholders-font-name-menulist"/>
+            </hbox>
+            <menulist id="placeholders-font-name-menulist" preference="placeholders-font-name" flex="1" style="width: 0px;">
+              <menupopup>
+                <menuitem value="" label="---" selected="true"/>
+              </menupopup>
+            </menulist>
+            <hbox pack="end">
+              <label value="&ilo-settings-placeholders-font-size.label; (px):" control="placeholders-font-size-menulist"/>
+            </hbox>
+            <menulist id="placeholders-font-size-menulist" preference="placeholders-font-size">
+              <menupopup>
+                <menuitem value="0" label="---"/>
+                <menuitem value="9" label="9"/>
+                <menuitem value="10" label="10"/>
+                <menuitem value="11" label="11"/>
+                <menuitem value="12" label="12"/>
+                <menuitem value="13" label="13"/>
+                <menuitem value="14" label="14"/>
+                <menuitem value="15" label="15"/>
+                <menuitem value="16" label="16"/>
+                <menuitem value="17" label="17"/>
+                <menuitem value="18" label="18"/>
+                <menuitem value="20" label="20"/>
+                <menuitem value="22" label="22"/>
+                <menuitem value="24" label="24"/>
+                <menuitem value="26" label="26"/>
+                <menuitem value="28" label="28"/>
+                <menuitem value="30" label="30"/>
+                <menuitem value="32" label="32"/>
+                <menuitem value="34" label="34"/>
+                <menuitem value="36" label="36"/>
+                <menuitem value="40" label="40"/>
+                <menuitem value="44" label="44"/>
+                <menuitem value="48" label="48"/>
+                <menuitem value="56" label="56"/>
+                <menuitem value="64" label="64"/>
+                <menuitem value="72" label="72"/>
+              </menupopup>
+            </menulist>
+          </row>
+        </rows>
+      </grid>
+    </groupbox>
+    
+    <groupbox>
+      <caption label="&ilo-settings-misc.caption;"/>
+      <checkbox preference="tabs-refresh" label="&ilo-settings-misc-refresh.label;"/>
+      <checkbox preference="esc-key" label="&ilo-settings-misc-esc-key.label;"/>
+    </groupbox>
+    
+  </prefpane>
+</overlay>

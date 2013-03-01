@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--?xml-stylesheet href="chrome://browser/skin/preferences/preferences.css"?-->
+<?xml-stylesheet href="../../skin/preferences/preferences.css"?>
+
+<!DOCTYPE prefwindow [
+  <!ENTITY % imglikeoperaDTD SYSTEM "../../locale/imglikeopera.dtd">
+  %imglikeoperaDTD;
+]>
+
+<prefwindow id="imglikeopera-prefwindow"
+            type="prefwindow"
+            windowtype="ILO:Preferences"
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            title="&ilo-settings-window.title;"
+            buttons="accept,cancel"
+            onbeforeaccept="return Preferences.beforeAccept();"
+            onunload="Preferences.onUnload();"
+            style="min-width:45em">
+
+  <prefpane id="prefpane-main" label="&prefpane.main.label;"
+            src="chrome://imglikeopera/content/preferences/main.xul" flex="1"/>
+  <prefpane id="prefpane-filters" label="&prefpane.filters.label;"
+            src="chrome://imglikeopera/content/preferences/filters.xul" flex="1"/>
+  <prefpane id="prefpane-experimental" label="&prefpane.experimental.label;"
+            src="chrome://imglikeopera/content/preferences/experimental.xul" flex="1"/>
+  <prefpane id="prefpane-help" label="&prefpane.help.label;"
+            src="chrome://imglikeopera/content/preferences/help.xul" flex="1"/>
+  
+  <script type="application/x-javascript" src="preferences.js"/>
+  <script type="application/x-javascript" src="filters.js"/>
+</prefwindow>

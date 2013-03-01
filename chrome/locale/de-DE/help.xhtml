@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://imglikeopera/skin/help.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>ImgLikeOpera: Hilfe</title>
+</head>
+<body>
+<h3>Wofür braucht man ILO?</h3>
+    
+    
+<p>ImgLikeOpera (ILO) ist nützlich, wenn Sie Webseiten mit vielen Grafiken 
+  und Bildern besuchen und Sie dafür ein Modem verwenden oder Ihr Breitbandzugang 
+  nach einem Volumentarif abgerechnet wird. </p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    
+<h3>Browseranforderungen</h3>
+    
+    
+<p>Firefox 4.0+</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    
+<h3>Funktionen der Erweiterung</h3>
+    
+    <ul>
+        
+  <li>Platzhalter für blockierte Grafiken</li>
+        
+  <li>Grafiken (neu) laden per Kontextmenü oder Strg+Rechtsklick</li>
+  <li>Erzwungene Verfallszeit (5 Minutes – 3 Monate)</li>
+  <li>Auswahl aus vier Richtlinien für jeden Tab</li>
+  <li>Filter</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    
+<h3>Richtlinien</h3>
+    
+    
+<p>Wählen Sie pro Tab aus vier möglichen Richtlinien die für Sie 
+  am besten geeignete aus:</p>
+    
+    
+<ul>
+  <li>Keine Grafiken laden</li>
+  <li>Grafiken nur aus dem Cache laden</li>
+  <li>Nur Grafiken der ursprünglichen Webseite laden</li>
+  <li>Alle Grafiken normal laden</li>
+</ul>
+        
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    
+<h3>Erzwungene Verfallszeit</h3>
+<p>Firefox arbeitet mit einem temporären Zwischenspeicher (Cache). Mit dieser 
+  Einstellung können Sie die Zeit, nach der die Grafiken aus dem Netz neu 
+  geladen werden sollen, selbst bestimmen.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Filter</h3>
+    
+    
+<p>ImgLikeOpera unterstützt zwei Filtertypen: einfache Filter und reguläre 
+  Ausdrücke (ähnlich Adblock). Reguläre Ausdrücke werden von 
+  ''/''-Zeichen umschlossen.</p>
+<p>Beispiel für einen einfachen Filter:</p>
+    
+    <ul>
+  <li>Im Feld ''Filter (URL-Adresse)'' eingeben: http://www.example.com</li>
+  <li>Im Feld ''Filterverhalten'': Auswahl ''Alle Grafiken normal laden''</li>
+  <li>''Hinzufügen'' anklicken</li>
+  <li>Filterliste speichern (''Anwenden'' anklicken)</li>
+</ul>
+    
+    
+<p>Nach diesem Schritt wird ILO alle grafischen Elemente, die von der URL http://www.example.com 
+  stammen, unabhängig von den aktuellen Richtlinien des Tabs normal laden.</p>
+<p>Sie können die Filterliste als Textdatei exportieren und importieren.</p>
+    
+    
+<p>Andere Beispiele für einfache Filter:</p>
+    
+    <ul>
+        <li>.gif</li>
+        <li>example.com/*.bmp</li>
+        <li>/banner</li>
+        <li>*/banner/*</li>
+    </ul>
+
+ <p>Hinweis: Filter wirken sich sowohl auf Grafiken als auch auf URLs aus.</p>
+        
+    
+<p>Beispiele für reguläre Ausdrücke:</p>
+    
+    <ul>
+        
+  <li>/banner|werbung/</li>
+        <li>/example\.com|imfo\.ru|mozdev\.org|mozilla\.com/</li>
+        <li>/example\.com\/(ads|banner)/i</li>
+        <li>/[a-z0-9\-\.]*(some\-url\.net|imfo\.ru|mozilla\.ru)/i</li>
+    </ul>
+    
+    
+<p>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</p>
+    
+    
+<h3>Bedienung, Tastaturkürzel, Anzeige des Symbols (Statusleiste/Symbolleiste)</h3>
+<p>Nach der Installation und Neustart des Browsers finden Sie das ImgLikeOpera-Symbol 
+  in der Statusleiste am unteren Rand des Browserfensters. Durch Mausklicks mit links 
+  (alternativ: Alt+M) oder rechts (Alt+N) schalten Sie nacheinander durch die Richtlinien des aktuellen 
+  Tabs, ein Klick mit der mittleren Maustaste öffnet die ILO-Einstellungen. 
+</p>
+    
+    
+<p>Ein Linksklick in die rechte Seite des Symbols (Pfeil) öffnet ein Kontextmenü 
+  mit den Richtlinien und 
+  den ILO-Einstellungen.</p>
+    
+    
+<p>Es gibt zwei Wege, um Grafiken (neu) zu laden: die Maus über eine Grafik 
+  positionieren und Strg plus rechte Maustaste drücken; oder aus dem Kontextmenü 
+  den Eintrag ''Grafik laden'' auswählen. </p>
+    
+    
+<p>Um das ILO-Symbol in der Symbolleiste anzuzeigen, klicken Sie 
+  mit der rechten Maustaste auf die Symbolleiste und wählen Sie den 
+  Eintrag ''Anpassen...''. Nun das ILO-Symbol per ''drag+drop'' 
+  an die gewünschte Stelle ziehen und den Browser neu starten. 
+</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    
+<h3>Bugs, Feedback</h3>
+<p>Bekannte Bugs:</p>
+    <ul>
+        
+  <li>ILO lädt blockierte Grafiken, wenn die Seite lokal abgespeichert wurde. 
+  </li>
+   </ul>
+    
+    
+<p>Konflikte mit anderen Erweiterungen sind bisher nicht bekannt.</p>
+<p>Falls Sie einen neuen Bug entdecken, benachrichtigen Sie bitte den Autor unter 
+  <a href="mailto:mash-funky@mail.ru">mash-funky@mail.ru</a> (nur auf englisch).</p>
+    
+    
+<p><strong>Bitte beachten</strong>: Der Autor wird...</p>
+    <ul>
+        
+  <li>... keine Nachrichten beantworten, die Passagen wie ''not worked, NoT 
+    WorkED!'' enthalten</li>
+  <li>... nur Nachrichten beachten, die mindestens die folgenden Angaben enthalten:
+    <ul>
+      <li>Browser-Version (bitte die komplette Angabe kopieren aus Extras - Über 
+        Mozilla Firefox)</li>
+      <li>Liste der installierten Erweiterungen</li>
+      <li>Detaillierte Angabe der Schritte, um den Fehler reproduzieren zu können</li>
+    </ul>
+        </li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    
+<h3>Danke</h3>
+    
+    
+<p>Der Autor dankt allen, die an der (Weiter-)Entwicklung von ILO beteiligt sind.</p>
+</body>
+</html>

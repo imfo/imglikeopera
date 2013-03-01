@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://imglikeopera/skin/help.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>ImgLikeOpera: Help</title>
+</head>
+<body>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Co to jest ILO i dla kogo jest dedykowane?</h3>
+    
+    <p>ImgLikeOpera (ILO) jest bardzo użytecznym rozszerzeniem dla osób korzystających z wolnego połączenia modemowego z Internetem  oraz osób, które wnoszą wysokie opłaty za transfer w połączeniu szerokopasmowym. Poprzez ograniczenie wczytywania grafik ich koszt korzystania z sieci Internet będzie niższy.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Wspierane przeglądarki</h3>
+    
+    <p>Firefox 4.0+</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Właściwości</h3>
+    
+    <ul>
+        <li>symbole zastępcze dla zablokowanych grafik (hi, LJ treads!)</li>
+        <li>uruchamianie wczytywania grafik przez menu kontekstowe lub [Ctrl]+prawy przycisk myszki</li>
+        <li>określenie czasu wygaśnięcia wpisów w pliku pamięci podręcznej (5 minut &#8211; 3 miesięce)</li>
+        <li>wybór jednego z czterech trybów działania filtrów dla każdej karty</li>
+        <li>możliwość zdefiniowania filtrów</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Tryby działania filtrów</h3>
+    
+    <p>Można wybrać jednen z czterech trybów działania filtrów dla każdej karty:</p>
+    
+    <ul>
+        <li>nie wczytuj grafik</li>
+        <li>wczytaj grafiki tylko z pliku pamięci podręcznej</li>
+        <li>wczytaj tylko grafiki rozpoczynające witrynę</li>
+        <li>wczytaj wszystkie grafiki</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Czas wygaśnięcia</h3>
+    
+    <p>Firefox bardzo dobrze współpracuje z pamięcią podręczną. Czasami przeglądarka potrzebuje sprawdzić czas ostatniej aktualizacji lub odświeżyć obiekty, które nie były zmieniane. Tutaj można ustawić okres po jakim ma nastąpić sprawdzenie/odświeżenie.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Filtry</h3>
+    
+    <p>ImgLikeOpera współpracuje z dwoma typami filtrów: filtr prosty i wyrażenia regularne (RegEx) (podziękowania dla <a href="http://adblockplus.org/" target="_blank">AdBlock</a>). Jeżeli w filtrze, na początku i na końcu filtra występuje znak &#34;/&#34;, jest to filtr zawierający wyrażenie regularne. Jeżeli te znaki nie występują, jest to filtr prosty.</p>
+    
+    <p>Tworzenie filtru prostego:</p>
+    
+    <ul>
+        <li>w polu &#8220;Filtr&#8221; wpisz http://www.example.com</li>
+        <li>w polu &#8220;Tryb działania filtrów&#8221; wybierz tryb &#8220;Wczytaj wszystkie grafiki&#8221;</li>
+        <li>naciśnij przycisk &#8220;Dodaj&#8221;</li>
+        <li>zapisz filtry (naciśnij przycisk &#8220;Zastosuj&#8221;)</li>
+    </ul>
+    
+    <p>Po wykonaniu powyższych czynności ILO będzie wczytywało wszystkie elementy graficzne, które mają w adresie URL &#8220;http://www.example.com&#8221;, niezależnie od aktualnego sposobu postępowania karty.</p>
+    
+    <p>Można eksportować/importować filtry na dysk lokalny jako pliki tekstowe.</p>
+    
+    <p>Inne przykłady filtrów prostych:</p>
+    
+    <ul>
+        <li>.gif</li>
+        <li>example.com/*.bmp</li>
+        <li>/banner</li>
+        <li>*/banner/*</li>
+    </ul>
+    
+    <p>Uwaga: reguły filtrów pracują tylko z adresami URL grafik, a nie z adresami witryn! Czasami adres grafiki zawiera adres witryny, czasami nie. Na przykład grafiki z witryny www.yahoo.com zawierają kolejne adresy URL:</p>
+    
+    <p>Dla osób znających wyrażenia regularne (RegExp):</p>
+    
+    <ul>
+        <li>/banner|annonce/</li>
+        <li>/example\.com|imfo\.ru|mozdev\.org|mozilla\.com/</li>
+        <li>/example\.com\/(ads|banner)/i</li>
+        <li>/[a-z0-9\-\.]*(some\-url\.net|imfo\.ru|mozilla\.ru)/i</li>
+    </ul>
+    
+    <p>Dwie uwagi:</p>
+    
+    <ul>
+        <li>można napisać &#34;/&#34; bez &#34;\&#34;, np. &#34;/test/banner/&#34; jest ekwiwalentem &#34;/test\/banner/&#34;</li>
+        <li>można użyć znacznika &#34;i&#34;, aby nie uwzględniać wielkości znaków w wyrażeniach regularnych (RegExp).</li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Kontrola, skróty, położenie (pasek stanu/pasek narzędzi nawigacyjnych)</h3>
+    
+    <p>Po zainstalowaniu rozszerzenia na pasku stanu przeglądarki będzie widoczny przycisk <span style="color: #3333FF">ImgLikeOpera</span>. Klikając lewym przyciskiem myszki (LPM) lub używając skrótu klawiaturowego [Alt]+[M] oraz klikając prawym przyciskiem myszki (PPM) lub używając skrótu klawiaturowego [Alt]+[N] można przełączać tryby działania filtrów w aktywnej karcie. Kliknięcie środkowym przyciskiem myszki (ŚPM) na tym przycisku powoduje wyświetlenie okna z ustawieniami rozszerzenia.</p>
+    
+    <p>Kliknięcie lewym przyciskiem myszki (LPM) na prawej części przycisku, oznaczonej małym trójkącikiem, spowoduje wyświetlenie menu trybów, opcji wczytywania arkuszy styli i opcji otwierania okna ustawień rozszerzenia.</p>
+    
+    <p>Istnieją dwie drogi wczytania grafik na stronie. Pierwsza z nich, to umieszczenie wskaźnika myszki nad grafiką i naciśnięcie [Ctrl]+[PPM]. Druga to wybranie &#8220;Wczytaj obrazek&#8221; z menu kontekstowego.</p>
+    
+    <p>Można także umieścić przycisk <span style="color: #3333FF">ImgLikeOpera</span> na pasku narzędzi nawigacyjnych obok innych przycisków poprzez wybranie &#8220;Dostosuj...&#8221; z menu kontekstowego pasków narzędziowych i przeciągnięcie ikony <span style="color: #3333FF">ImgLikeOpera</span> z otwartego okna na pasek narzędziowy. Po tej czynności należy koniecznie <strong>ponownie uruchomić</strong> przeglądarkę.</p>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>FAQ</h3>
+    
+    <ul id="faq">
+        <li>Jak dla mnie ILO nie działa.</li>
+        <li class="a">Jak dla mnie ILO działa.</li>
+        
+        <li>Ale... Jak dla mnie ILO nie działa!</li>
+        <li class="a">Zobacz &#8220;Błędy, opinie&#8221;.</li>
+        
+        
+        <li>Grafiki ciągle wczytują się od początku, tak jakby nie były zapisane w pamięci podręcznej. Ustawienia pamięci (wielkość i czas wygaśnięcia) mają duże wartości.</li>
+        <li class="a">Powodem tego jest niestabilna pamięć podręczna Firefoksa. Czasami ulega ona awariom. Autor rozszerzenia nie odpowiada za to.</li>
+        
+        
+        <li>Chciałbym dowiedzieć się coś na temat blokowania flash'a.</li>
+        <li class="a"><a href="http://flashblock.mozdev.org/" target="_blank">Flashblock</a>.</li>
+        
+        <li>Nie podobają mi się skróty klawiaturowe. Można je zmienić?</li>
+        <li class="a"><a href="http://mozilla.dorando.at/readme.html" target="_blank">keyconfig</a>.</li>
+        
+        <li>Nie podobają mi się ikony rozszerzenia.</li>
+        <li class="a">Stwórz nowe i prześlij je do autroa. Może zamieści je w kolejnej wersji ILO.</li>
+        
+        <li>Czy to rozszerzenie będzie także mogło działać w  Mozilla Suite?</li>
+        <li class="a">Nie wiem. Czy będzie taka potrzeba po wydaniu tej wersji &#8220;<a href="http://www.mozillazine.org/talkback.html?article=6206" target="_blank">No Official Mozilla 1.8</a>&#8221;?</li>
+        
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Błędy, opinie</h3>
+    
+    <p>Znane błędy:</p>
+    <ul>
+        <li>ILO wczytuje zablokowane grafiki w czasie, gdy strona jest zapisywana na dysku;</li>
+        <li>Występują konflikty z niektórymi motywami WindowsXP, gdy przycisk ILO jest umieszczony na pasku stanu.</li>
+    </ul>
+    
+    <p>Brak informacji o konfliktach z innymi rozszerzeniami.</p>
+    
+    <p>Jeżeli znajdziesz jakiekolwiek błędy powiadom o nich autora <a href="mailto:mash-funky@mail.ru">mash-funky@mail.ru</a></p>
+    
+    <p><strong>N.B.</strong>: Autor...</p>
+    <ul>
+        <li>... nie będzie czytał żadnych wiadomości zawierających wykrzykniki np. &#8220;Działa! Nie dziAŁA!&#8221;</li>
+        <li>... zawsze zapozna się z korespondencją, która będzie zawierała:
+            <ul>
+                <li>wersję przeglądarki (UA)</li>
+                <li>listę zainstalowanych rozszerzeń</li>
+                <li>opis problemu</li>
+                <li>i (opcjonalnie) opinię o  bezpośrednich przyczynach problemu</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <h3>Podziękowania</h3>
+    
+    <p>Wiele osób pomogło mi w tworzeniu tego rozszerzenia i wymienianie ich wszystkich zajęłoby wiele miejsca. Zawsze też istnieje możliwość pominięcia kogoś. Nie chciałbym kogokolwiek urazić, więc: Serdeczne podziękowania dla wszystkich, którzy pomogli przy tworzeniu ILO.</p>
+    <p>Autor</p>
+</body>
+</html>
