@@ -41,6 +41,45 @@ Cu.import("resource://gre/modules/Services.jsm");
  *
  ************************************************************************/
 
+(function(that) {
+  function CacheListener() {
+    this.done = false;
+  }
+
+  CacheListener.prototype = {
+    onCacheEntryAvailable: function CacheListener_onCacheEntryAvailable(descriptor, accessGranted, status) {
+      this.descriptor = descriptor;
+      this.status = status;
+      this.done = true;
+    },
+    
+    onCacheEntryDoomed: function CacheListener_onCacheEntryDoomed() {},
+    
+    QueryInterface: function(iid) {
+      if (iid.equals(Ci.nsICacheListener))
+        return this;
+      throw Cr.NS_NOINTERFACE;
+    }
+  };
+  
+  const THREAD_MANAGER = Cc["@mozilla.org/thread-manager;1"].getService();
+  
+  that.syncGetCacheEntry = function syncGetCacheEntry(aCacheSession, aKey, aAccessMode) {
+    let startTime = Date.now();
+    let listener = new CacheListener();
+    aCacheSession.asyncOpenCacheEntry(aKey, aAccessMode, listener, true);
+    
+    while (!(listener.done || Math.abs(Date.now() - startTime) > 5000)) {
+      // if (Math.abs(Date.now() - startTime) > 5000)
+      //   dump("Too long syncGetCacheEntry\n");
+      
+      THREAD_MANAGER.currentThread.processNextEvent(false);
+    }
+    
+    return listener;
+  }
+})(this);
+
 function nsImgLikeOpera() {
   this.debug = false;
   
@@ -332,15 +371,23 @@ nsImgLikeOpera.prototype = {
     },
     
     setTabPolicy: function SStore_setTabPolicy(aTab, aPolicy) {
-      if (this._enabled)
+      if (!this._enabled)
+        return;
+      
+      try {
         this._sessionStoreService.setTabValue(aTab, "ilo-tab-policy", aPolicy);
+      } catch(e) {}
     },
     
     getTabPolicy: function SStore_getTabPolicy(aTab) {
       if (!this._enabled)
         return null;
       
-      let policy = parseInt(this._sessionStoreService.getTabValue(aTab, "ilo-tab-policy"), 10);
+      let policy = NaN;
+      try {
+        policy = parseInt(this._sessionStoreService.getTabValue(aTab, "ilo-tab-policy"), 10);
+      } catch(e) {}
+      
       return isNaN(policy) ? null : policy;
     }
   },
@@ -379,6 +426,11 @@ nsImgLikeOpera.prototype = {
    * So... should load?
    */
   shouldLoad: function ILO_shouldLoad(contentType, contentLocation, context, obj) {
+    if (/yandex/.test(contentLocation.spec)) {
+      dump(contentLocation.spec + "\n");
+      return ACCEPT;
+    }
+      
     if (contentLocation.scheme != "http" && contentLocation.scheme != "https")
       return ACCEPT;
     
@@ -599,20 +651,22 @@ nsImgLikeOpera.prototype = {
     if (forcedExpTime > 0) {
       for each (let cacheSession in this.cacheSessions) {
         try {
-          cacheEntryDescriptor = cacheSession.openCacheEntry(url, nsICacheEntryDescriptor, false);
+          cacheEntryDescriptor = syncGetCacheEntry(cacheSession, url, nsICache.ACCESS_READ_WRITE).descriptor;
         } catch(e) {}
         
         if (cacheEntryDescriptor) {
-          let expirationTime = cacheEntryDescriptor.lastModified + forcedExpTime;
-          
-          if (expirationTime < timenow) {// || !cacheEntryDescriptor.dataSize(?)) {
-            cacheEntryDescriptor.doom();
-          } else {
-            expired = false;
+          if (cacheEntryDescriptor.lastModified) {
+            let expirationTime = cacheEntryDescriptor.lastModified + forcedExpTime;
             
-            if (cacheEntryDescriptor.expirationTime != expirationTime) {
-              cacheEntryDescriptor.setExpirationTime(expirationTime);
-              cacheEntryDescriptor.markValid();
+            if (expirationTime < timenow) { // || !cacheEntryDescriptor.dataSize(?)) {
+              cacheEntryDescriptor.doom();
+            } else {
+              expired = false;
+              
+              if (cacheEntryDescriptor.expirationTime != expirationTime) {
+                cacheEntryDescriptor.setExpirationTime(expirationTime);
+                cacheEntryDescriptor.markValid();
+              }
             }
           }
           
@@ -620,20 +674,21 @@ nsImgLikeOpera.prototype = {
           
           if (!expired) {
             try {
-              cacheSession.openCacheEntry(url, nsICache.ACCESS_READ, false);
+              // Need to call this after setExpirationTime for properly expiration time.
+              syncGetCacheEntry(cacheSession, url, nsICache.ACCESS_READ);
             } catch(ex) {
               expired = true;
             }
           }
           
-          break;//for each
+          break; // for each
         }
       }
     
     } else if (docpolicy == 3) {
       for each (let cacheSession in this.cacheSessions) {
         try {
-          cacheEntryDescriptor = cacheSession.openCacheEntry(url, nsICacheEntryDescriptor, false);
+          cacheEntryDescriptor = syncGetCacheEntry(cacheSession, url, nsICache.ACCESS_READ).descriptor;
         } catch(e) {}
         
         if (cacheEntryDescriptor) {
@@ -642,7 +697,7 @@ nsImgLikeOpera.prototype = {
           
           cacheEntryDescriptor.close();
           
-          break;//for each
+          break; // for each
         }
       }
     }

@@ -96,7 +96,6 @@ var ILO = {
         this.openPrefWindow();
       else if (aEvent.button == 2)
         this.indicatorClick("prev");
-      return;
     }
   },
   
@@ -180,14 +179,8 @@ var ILO = {
     if (!button)
       return;
     
-    let indicatorPopupItems = button.lastChild.childNodes;
-    
-    for (let k = 4; --k > -1;) {
-      if (indicatorPopupItems[k].getAttribute("checked") != "false")
-        indicatorPopupItems[k].setAttribute("checked", "false");
-    }
-    
-    indicatorPopupItems[ 4 - this.browser.selectedBrowser.iloTabPolicy ].setAttribute("checked", "true");
+    let selectedIndex = 4 - this.browser.selectedBrowser.iloTabPolicy;
+    button.lastChild.children[selectedIndex].setAttribute("checked", "true");
   },
   
   indicatorSet: function ILO_indicatorSet(policy) {
@@ -537,7 +530,7 @@ var ILO = {
       }
       
       case "keypress": {
-        if (aEvent.keyCode == 27 && this.settings.esc_key) {// "Esc"
+        if (aEvent.keyCode == 27 && this.settings.esc_key) { // "Esc"
           let _doc = aEvent.target.ownerDocument;
           while (_doc.defaultView.frameElement)
             _doc = _doc.defaultView.frameElement.ownerDocument;

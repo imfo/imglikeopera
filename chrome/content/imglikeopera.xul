@@ -36,10 +36,10 @@
         <menupopup onpopupshowing="ILO.indicatorPopup();"
                    oncommand="ILO.indicatorClick(event.target.getAttribute('value')); event.stopPropagation();">
           
-          <menuitem value="4" label="&ilo-policy-load-dont.label;" type="checkbox"/>
-          <menuitem value="3" label="&ilo-policy-load-cached.label;" type="checkbox"/>
-          <menuitem value="2" label="&ilo-policy-load-origsite-short.label;" type="checkbox"/>
-          <menuitem value="1" label="&ilo-policy-load-all.label;" type="checkbox"/>
+          <menuitem value="4" label="&ilo-policy-load-dont.label;" type="radio" name="ilo-tab-policy"/>
+          <menuitem value="3" label="&ilo-policy-load-cached.label;" type="radio" name="ilo-tab-policy"/>
+          <menuitem value="2" label="&ilo-policy-load-origsite-short.label;" type="radio" name="ilo-tab-policy"/>
+          <menuitem value="1" label="&ilo-policy-load-all.label;" type="radio" name="ilo-tab-policy"/>
           
           <menuseparator/>
           
