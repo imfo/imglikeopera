@@ -426,11 +426,6 @@ nsImgLikeOpera.prototype = {
    * So... should load?
    */
   shouldLoad: function ILO_shouldLoad(contentType, contentLocation, context, obj) {
-    if (/yandex/.test(contentLocation.spec)) {
-      dump(contentLocation.spec + "\n");
-      return ACCEPT;
-    }
-      
     if (contentLocation.scheme != "http" && contentLocation.scheme != "https")
       return ACCEPT;
     
