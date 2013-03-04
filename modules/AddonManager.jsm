@@ -41,7 +41,7 @@ const AddonManager = {
   
   get addonVersion() {
     // FIXME: %addonVersion%
-    return "0.6.23";
+    return "0.6.24";
   },
   
   get _addonLastInstalledVersion() {
