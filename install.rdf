@@ -7,7 +7,7 @@
     <em:id>imglikeopera@imfo.ru</em:id>
     <em:name>ImgLikeOpera</em:name>
     <em:type>2</em:type>
-    <em:version>0.6.23</em:version>
+    <em:version>0.6.23.1</em:version>
     <em:description>Show cached images only</em:description>
     <em:creator>Danil Ivanov</em:creator>
     <em:contributor>Wladimir Palant (great help)</em:contributor>
@@ -36,7 +36,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>19.0</em:minVersion>
-        <em:maxVersion>21.*</em:maxVersion>
+        <em:maxVersion>32.*</em:maxVersion>
       </Description>
     </em:targetApplication>
 
