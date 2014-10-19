@@ -35,6 +35,12 @@ const nsICacheEntryDescriptor   = Ci.nsICacheEntryDescriptor;
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
 
+function makeURI(aURL, aOriginCharset, aBaseURI) {
+  var ioService = Cc["@mozilla.org/network/io-service;1"].getService(Ci.nsIIOService);
+  return ioService.newURI(aURL, aOriginCharset, aBaseURI);
+}
+
+
 /************************************************************************
  *
  * Smthng...
@@ -47,16 +53,16 @@ Cu.import("resource://gre/modules/Services.jsm");
   }
 
   CacheListener.prototype = {
-    onCacheEntryAvailable: function CacheListener_onCacheEntryAvailable(descriptor, accessGranted, status) {
-      this.descriptor = descriptor;
+    onCacheEntryCheck: function (entry, appcache) {
+			return Ci.nsICacheEntryOpenCallback.ENTRY_WANTED;
+		},
+		onCacheEntryAvailable: function (entry, isnew, appcache, status) {
+			this.descriptor = entry;
       this.status = status;
       this.done = true;
     },
-    
-    onCacheEntryDoomed: function CacheListener_onCacheEntryDoomed() {},
-    
     QueryInterface: function(iid) {
-      if (iid.equals(Ci.nsICacheListener))
+      if (iid.equals(Ci.nsISupports) || iid.equals(Ci.nsICacheEntryOpenCallback))
         return this;
       throw Cr.NS_NOINTERFACE;
     }
@@ -64,10 +70,10 @@ Cu.import("resource://gre/modules/Services.jsm");
   
   const THREAD_MANAGER = Cc["@mozilla.org/thread-manager;1"].getService();
   
-  that.syncGetCacheEntry = function syncGetCacheEntry(aCacheSession, aKey, aAccessMode) {
+  that.syncGetCacheEntry = function syncGetCacheEntry(aCacheSession, aKey) {
     let startTime = Date.now();
     let listener = new CacheListener();
-    aCacheSession.asyncOpenCacheEntry(aKey, aAccessMode, listener, true);
+    aCacheSession.asyncOpenURI(makeURI(aKey), "", Ci.nsICacheStorage.OPEN_READONLY, listener);
     
     while (!(listener.done || Math.abs(Date.now() - startTime) > 5000)) {
       // if (Math.abs(Date.now() - startTime) > 5000)
@@ -86,15 +92,12 @@ function nsImgLikeOpera() {
   this.wrappedJSObject = this;
   
   // cache sessions
-  const CACHE_SERVICE = Cc["@mozilla.org/network/cache-service;1"].getService(Ci.nsICacheService);
+  let {LoadContextInfo} = Cu.import(
+		"resource://gre/modules/LoadContextInfo.jsm", {});
+	const CACHE_SERVICE = Cc["@mozilla.org/netwerk/cache-storage-service;1"].getService(Ci.nsICacheStorageService);
+	let httpCacheSession  = CACHE_SERVICE.diskCacheStorage(LoadContextInfo.default, false);
   
-  let httpCacheSession  = CACHE_SERVICE.createSession("HTTP", nsICache.STORE_ANYWHERE, nsICache.STREAM_BASED);
-  httpCacheSession.doomEntriesIfExpired = false;
-  
-  let imageCacheSession = CACHE_SERVICE.createSession("image", nsICache.STORE_ANYWHERE, nsICache.NOT_STREAM_BASED);
-  imageCacheSession.doomEntriesIfExpired = false;
-  
-  this.cacheSessions = [httpCacheSession, imageCacheSession];
+  this.cacheSessions = [httpCacheSession];
   
   Services.obs.addObserver(this, "profile-after-change", false);
   Services.obs.addObserver(this, "profile-before-change", false);
@@ -621,11 +624,15 @@ nsImgLikeOpera.prototype = {
   removeCacheEntry: function ILO_removeCacheEntry(aURL) {
     this.cacheSessions.forEach(function(aCacheSession) {
       try {
-        let cacheEntryDescriptor = aCacheSession.openCacheEntry(aURL, nsICacheEntryDescriptor, false);
-        if (cacheEntryDescriptor) {
-          cacheEntryDescriptor.doom();
-          cacheEntryDescriptor.close();
+        aCacheSession.asyncOpenURI(makeURI(aURL), "", Ci.nsICacheStorage.OPEN_READONLY, 
+					{
+						onCacheEntryCheck: function (entry, appcache) {
+							return Ci.nsICacheEntryOpenCallback.ENTRY_WANTED;
+						},
+						onCacheEntryAvailable: function (entry, isnew, appcache, status) {
+							if (entry) entry.asyncDoom(null);
         }
+					});
       } catch(e) {}
     });
     
@@ -646,7 +653,7 @@ nsImgLikeOpera.prototype = {
     if (forcedExpTime > 0) {
       for each (let cacheSession in this.cacheSessions) {
         try {
-          cacheEntryDescriptor = syncGetCacheEntry(cacheSession, url, nsICache.ACCESS_READ_WRITE).descriptor;
+          cacheEntryDescriptor = syncGetCacheEntry(cacheSession, url).descriptor;
         } catch(e) {}
         
         if (cacheEntryDescriptor) {
@@ -654,23 +661,20 @@ nsImgLikeOpera.prototype = {
             let expirationTime = cacheEntryDescriptor.lastModified + forcedExpTime;
             
             if (expirationTime < timenow) { // || !cacheEntryDescriptor.dataSize(?)) {
-              cacheEntryDescriptor.doom();
+              cacheEntryDescriptor.asyncDoom(null);
             } else {
               expired = false;
               
               if (cacheEntryDescriptor.expirationTime != expirationTime) {
                 cacheEntryDescriptor.setExpirationTime(expirationTime);
-                cacheEntryDescriptor.markValid();
               }
             }
           }
           
-          cacheEntryDescriptor.close();
-          
           if (!expired) {
             try {
               // Need to call this after setExpirationTime for properly expiration time.
-              syncGetCacheEntry(cacheSession, url, nsICache.ACCESS_READ);
+              syncGetCacheEntry(cacheSession, url);
             } catch(ex) {
               expired = true;
             }
@@ -683,14 +687,13 @@ nsImgLikeOpera.prototype = {
     } else if (docpolicy == 3) {
       for each (let cacheSession in this.cacheSessions) {
         try {
-          cacheEntryDescriptor = syncGetCacheEntry(cacheSession, url, nsICache.ACCESS_READ).descriptor;
+          cacheEntryDescriptor = syncGetCacheEntry(cacheSession, url).descriptor;
         } catch(e) {}
         
         if (cacheEntryDescriptor) {
           if (cacheEntryDescriptor.expirationTime > timenow)
             expired = false;
           
-          cacheEntryDescriptor.close();
           
           break; // for each
         }
