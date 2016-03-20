@@ -158,5 +158,11 @@ const Preferences = {
   }
 };
 
+Object.defineProperty(this, "Preferences", {
+  value: Preferences,
+  enumerable: true,
+  writable: false
+});
+
 window.addEventListener("load", Preferences, false);
 window.addEventListener("paneload", Preferences, false);
