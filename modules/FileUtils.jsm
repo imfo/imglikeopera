@@ -1,6 +1,6 @@
 "use strict";
 
-let EXPORTED_SYMBOLS = ["FileUtils"];
+var EXPORTED_SYMBOLS = ["FileUtils"];
 
 const {
   classes: Cc,
