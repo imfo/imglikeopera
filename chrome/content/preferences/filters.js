@@ -449,3 +449,9 @@ const Filters = {
             select[0]];
   }
 };
+
+Object.defineProperty(this, "Filters", {
+  value: Filters,
+  enumerable: true,
+  writable: false
+});
