@@ -1,6 +1,6 @@
 "use strict";
 
-let EXPORTED_SYMBOLS = ["Settings"];
+var EXPORTED_SYMBOLS = ["Settings"];
 
 Components.utils.import("resource://imglikeopera-modules/Preferences.jsm");
 
@@ -12,7 +12,7 @@ Components.utils.import("resource://imglikeopera-modules/Preferences.jsm");
 
 /************************************************************************/
 
-let Settings = Proxy.create({
+var Settings = new Proxy({}, {
   get: function SettingsProxy_get(aProxy, aName) {
     let prefName = propName2prefName(aName);
     
@@ -51,5 +51,5 @@ Prefs.observe2("", settingsObserver);
 
 /************************************************************************/
 
-function prefName2propName(str) str.replace(/\./g, "_");
-function propName2prefName(str) str.replace(/_/g, ".");
+function prefName2propName(str) {return str.replace(/\./g, "_");}
+function propName2prefName(str) {return str.replace(/_/g, ".");}
