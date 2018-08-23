@@ -30,7 +30,7 @@ const Filters = {
     this.rButtons =   document.getElementById("iloPermButtons").childNodes;
     this.rPopup =     document.getElementById("iloFiltersPopup").childNodes;
     
-    let policyPatternsData = (this.settings.policy_patterns || []).split("  ");
+    let policyPatternsData = (this.settings.policy_patterns || []).toString().split("  ");
     for (let i = 0, len = policyPatternsData.length - 1; i < len; i++)
       this.treeAddItem(policyPatternsData[i].split(" "));
   },
@@ -449,3 +449,9 @@ const Filters = {
             select[0]];
   }
 };
+
+Object.defineProperty(this, "Filters", {
+  value: Filters,
+  enumerable: true,
+  writable: false
+});

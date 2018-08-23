@@ -653,6 +653,6 @@ var ILO = {
   }
 };
 
-window.addEventListener("load", function() ILO.onLoad(), false);
-window.addEventListener("unload", function() ILO.unLoad(), false);
+window.addEventListener("load", function(){ILO.onLoad();}, false);
+window.addEventListener("unload", function(){ILO.unLoad();}, false);
 window.addEventListener("delayLoadRefresher", ILO, false);

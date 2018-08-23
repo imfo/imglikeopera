@@ -1,6 +1,6 @@
 "use strict";
 
-let EXPORTED_SYMBOLS = ["DocumentData"];
+var EXPORTED_SYMBOLS = ["DocumentData"];
 
 function DocumentData(aTab, aDelay) {
   this.clearURLStatus();
