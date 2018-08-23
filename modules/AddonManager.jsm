@@ -18,15 +18,15 @@ const AddonManager = {
       //   > 0 - curent > last
       addonVersionState: 0,
       // Is version changed?
-      get addonVersionChanged() this.addonVersionState != 0,
+      get addonVersionChanged() {return this.addonVersionState != 0;},
       // ...up?
-      get addonUpgraded() this.addonVersionState > 0,
+      get addonUpgraded() {return this.addonVersionState > 0;},
       // ...or down?
-      get addonDowngraded() this.addonVersionState < 0,
+      get addonDowngraded() {return this.addonVersionState < 0;},
       // Previous version.
       addonLastVersion: "0",
       // true == "fresh" install.
-      get freshInstall() this.addonLastVersion === "0"
+      get freshInstall() {return this.addonLastVersion === "0";}
     };
     
     this._start();
