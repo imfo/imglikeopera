@@ -128,8 +128,8 @@ const Preferences = {
       let actualValue = typeof preference.value != "undefined" ? preference.value : preference.defaultValue;
       let modesValue = (actualValue || "1,2,3,4")
                          .split(",")
-                         .map(function(mode) parseInt(mode, 10))
-                         .filter(function(mode) mode >= 1 && mode <= 4)
+                         .map(function(mode) {parseInt(mode, 10)})
+                         .filter(function(mode) {mode >= 1 && mode <= 4})
                          .sort();
       
       if (!modesValue.length)
@@ -157,6 +157,12 @@ const Preferences = {
     }
   }
 };
+
+Object.defineProperty(this, "Preferences", {
+  value: Preferences,
+  enumerable: true,
+  writable: false
+});
 
 window.addEventListener("load", Preferences, false);
 window.addEventListener("paneload", Preferences, false);
